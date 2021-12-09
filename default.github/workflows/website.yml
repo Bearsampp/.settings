@@ -12,52 +12,32 @@ jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
-      -
-        name: Checkout
+      - name: Checkout
         uses: actions/checkout@v2.4.0
-      -
-        name: Set up Node.js
+      - name: Set up Node.js
         uses: actions/setup-node@v2.5.0
         with:
-          node-version: 11
-      -
-        name: Set up Ruby
-        uses: actions/setup-ruby@v1
+          node-version: 14
+      - run: npm install
+      - run: npm test
+
+      - name: Setup Ruby, JRuby and TruffleRuby
+        uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
-      -
-        name: Set up gems cache
-        uses: actions/cache@v2
-        with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-gem-${{ hashFiles('**/Gemfile.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-gem-
-      -
-        name: Set up node_modules cache
-        uses: actions/cache@v2
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-node-${{ hashFiles('**/yarn.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
-      -
-        name: Set up Bundler
-        run: |
-          gem uninstall -aIx bundler
-          gem install bundler -v 2.0.2
-      -
-        name: Yarn install
+          ruby-version: 2.6
+          bundler-cache: true
+
+      - name: Yarn install
         run: |
           npm install -g yarn
-          yarn install --frozen-lockfile
-      -
-        name: Bundle install
+          yarn install
+
+      - name: Bundle install
         run: |
           bundle config path vendor/bundle
           bundle install --jobs 4 --retry 3
-      -
-        name: Build
+
+      - name: Build
         env:
           JEKYLL_ENV: production
           JEKYLL_LOG_LEVEL: info
@@ -66,13 +46,13 @@ jobs:
         run: |
           gulp --env=production build
           #htmlproofer ./web/download --allow-missing-href --allow-hash-href --assume_extension --check-favicon --http-status-ignore 403 --only-4xx --alt-ignore "/.*/" --log-level=:debug
-      -
-        name: Check GitHub Pages status
+
+      - name: Check GitHub Pages status
         uses: crazy-max/ghaction-github-status@v2.2.0
         with:
           pages_threshold: major_outage
-      -
-        name: Deploy
+
+      - name: Deploy
         if: success() && github.event_name != 'pull_request'
         uses: crazy-max/ghaction-github-pages@v2.5.0
         with:

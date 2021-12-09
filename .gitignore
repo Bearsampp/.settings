@@ -1,9 +1,11 @@
-/.idea
+# Jetbrains
 /*.iml
+.idea/
 
+# Neard
 /.dev
 
-/.vsc
-/.vs
-/*.vs
-/*.vsc
+# Visual Studio
+.vscode/
+.vs/
+.vsc/
