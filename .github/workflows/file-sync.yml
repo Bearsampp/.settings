@@ -6,8 +6,7 @@ jobs:
   labeler:
     runs-on: ubuntu-latest
     steps:
-      -
-      name: sync
+      - name: sync
       uses: nkoppel/push-files-to-another-repository@1.1.0
       env:
         API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
