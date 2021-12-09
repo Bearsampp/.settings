@@ -14,8 +14,8 @@ jobs:
         env:
           API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
         with:
-          source_file: '.github'
+          source_file: '/.github'
           user_name: 'Bearsampp'
           user_email: 'programming@hallhome.us'
           destination_repo: 'Bearsampp/website'
-          destination_folder: '.github'
+          destination_folder: '/.github'
