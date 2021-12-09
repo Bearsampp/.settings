@@ -17,5 +17,5 @@ jobs:
           source_file: '/.github'
           user_name: 'Bearsampp'
           user_email: 'programming@hallhome.us'
-          destination_repo: 'Bearsampp/website'
+          destination_repo: 'Bearsampp\website'
           destination_folder: '/.github'

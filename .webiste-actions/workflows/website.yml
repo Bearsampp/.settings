@@ -1,3 +1,4 @@
+# Action to create the bearsampp.github.io website.
 name: website
 
 on:

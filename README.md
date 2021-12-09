@@ -1,11 +1,10 @@
-![](./img/bearsampp-logo.png)
 # .settings
-
 
 These are the settings that should be included in every repo & editor.
 This is eqv to https://docs.joomla.org/Joomla_CodeSniffer
 
 ** How to clone all repos in the organization at once.
+
 1. first download and install [Git-cli](https://cli.github.com/)
 2. install _**"Git-cli"**_
 3. reboot
@@ -15,3 +14,9 @@ This is eqv to https://docs.joomla.org/Joomla_CodeSniffer
 
 Thats all there is too it.  [Full instructions here](https://github.com/matt-bartel/gh-clone-org)
 
+** How to sync .github folder for all repos
+
+* install [gh cli](https://github.com/cli/cli/releases/download/v2.3.0/gh_2.3.0_windows_amd64.msi)
+* run ```gh repo list > raw-list.txt```
+* using notepad++ ( or eqv ) search for "tab" ( \t ) and delete everything from it to end of line. save as "list.txt"
+* 
