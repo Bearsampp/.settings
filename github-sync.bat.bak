@@ -1,6 +1,3 @@
-cd "..\Bearsampp\startbootstrap-clean-blog\.github"
-dir
-pause
 git status
 git add -A
 git commit -m "Syncing .github folder"
