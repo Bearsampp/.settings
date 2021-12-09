@@ -1,0 +1,10 @@
+- name: Sync .github files
+  uses: nkoppel/push-files-to-another-repository@1.1.0
+  env:
+    API_TOKEN_GITHUB: ${{ secrets.API_TOKEN_GITHUB }}
+  with:
+    source-files: '.github/'
+    destination-username: 'Bearsampp'
+    destination-repository: 'website'
+    destination-directory: '.github'
+    commit-username: 'N6REJ'
