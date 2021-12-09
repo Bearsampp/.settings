@@ -1,4 +1,4 @@
-cd ..\Bearsampp\startbootstrap-clean-blog\.github
+cd "..\Bearsampp\startbootstrap-clean-blog\.github"
 dir
 pause
 git status
