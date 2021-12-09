@@ -18,4 +18,4 @@ jobs:
           user_name: 'Bearsampp'
           user_email: 'programming@hallhome.us'
           destination_repo: 'website'
-          destination_foler: '.github'
+          destination_folder: '.github'
