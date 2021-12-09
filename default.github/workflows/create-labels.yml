@@ -3,10 +3,11 @@ name: labels
 on:
   push:
     branches:
-      - 'dev'
+      - 'main'
+      - 'master'
     paths:
-      - 'default.github/labels.yml'
-      - 'default.github/workflows/labels.yml'
+      - '.github/labels.yml'
+      - '.github/workflows/create-labels.yml'
 
 jobs:
   labeler:
@@ -17,4 +18,5 @@ jobs:
         uses: actions/checkout@v2
       -
         name: Run Labeler
+        if: success()
         uses: crazy-max/ghaction-github-labeler@v3.1.1
