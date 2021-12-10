@@ -3,7 +3,7 @@ git add -A
 git commit -m "Syncing .github folder"
 git commit
 git push
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\startbootstrap-clean-blog\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\startbootstrap-clean-blog\.github\*.*"
 cd %~p0"..\Bearsampp\startbootstrap-clean-blog"
 git status
 git add -A
@@ -11,105 +11,105 @@ git commit -m "Syncing .github folder"
 git commit
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\website\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\website\.github\*.*"
 cd %~p0"..\Bearsampp\website"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-ruby\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-ruby\.github\*.*"
 cd %~p0"..\Bearsampp\module-ruby"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\modules-untouched\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\modules-untouched\.github\*.*"
 cd %~p0"..\Bearsampp\modules-untouched"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-filezilla\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-filezilla\.github\*.*"
 cd %~p0"..\Bearsampp\module-filezilla"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-apache\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-apache\.github\*.*"
 cd %~p0"..\Bearsampp\module-apache"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\dev\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\dev\.github\*.*"
 cd %~p0"..\Bearsampp\dev"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\Bearsampp\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\Bearsampp\.github\*.*"
 cd %~p0"..\Bearsampp\Bearsampp"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-git\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-git\.github\*.*"
 cd %~p0"..\Bearsampp\module-git"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-xdc\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-xdc\.github\*.*"
 cd %~p0"..\Bearsampp\module-xdc"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-php\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-php\.github\*.*"
 cd %~p0"..\Bearsampp\module-php"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-perl\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-perl\.github\*.*"
 cd %~p0"..\Bearsampp\module-perl"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-mysql\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-mysql\.github\*.*"
 cd %~p0"..\Bearsampp\module-mysql"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-ngrok\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-ngrok\.github\*.*"
 cd %~p0"..\Bearsampp\module-ngrok"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-websvn\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-websvn\.github\*.*"
 cd %~p0"..\Bearsampp\module-websvn"
 git status
 git add -A
 git commit -m "Syncing .github folder"
 git push
 cd %~p0
-xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-nodejs\.github"
+xcopy /E /Y /EXCLUDE:exclude.txt %~p0".github\*.*" %~p0"Bearsampp\module-nodejs\.github\*.*"
 cd %~p0"..\Bearsampp\module-nodejs"
 git status
 git add -A
