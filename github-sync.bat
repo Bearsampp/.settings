@@ -275,4 +275,4 @@ xcopy /e /y %~p0".github\*.*" %~p0"..\aetraymenu\.github\*.*"
 git status
 git add -A
 git commit -m "Syncing .github folder"
-git p%~p*.*\.github\*.*0
+git %~p0

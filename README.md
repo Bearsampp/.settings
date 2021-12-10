@@ -17,6 +17,8 @@ Thats all there is too it.  [Full instructions here](https://github.com/matt-bar
 ** How to sync .github folder for all repos
 
 * install [gh cli](https://github.com/cli/cli/releases/download/v2.3.0/gh_2.3.0_windows_amd64.msi)
+* open terminal in this repo
 * run ```gh repo list > raw-list.txt```
 * using notepad++ ( or eqv ) search for "tab" ( \t ) and delete everything from it to end of line. save as "list.txt"
+* Add new repos to github-sync.bat using ```xcopy /E /Y /EXCLUDE:exclude.txt .github\*.* ..\Bearsampp\${NEW_REPO_NAME}```  Replace "${NEW_REPO_NAME}" with the name of the missing repo
 * 
