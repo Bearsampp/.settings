@@ -1,0 +1,133 @@
+@echo off
+git status
+git add -A
+git commit -m "Syncing .github folder"
+git push
+cd %~p0
+
+
+cd %~p0Bearsampp/Bearsampp
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+git status
+git add -A
+git commit -m "Syncing .github folder"
+git push
+
+cd %~p0Bearsampp/startbootstrap-clean-blog
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+git status
+git add -A
+git commit -m "Syncing .github folder"
+git push 
+
+cd %~p0Bearsampp/website
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/website
+cd %~p0Bearsampp/module-ruby
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-ruby
+cd %~p0Bearsampp/modules-untouched
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/modules-untouched
+cd %~p0Bearsampp/module-filezilla
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-filezilla
+cd %~p0Bearsampp/module-apache
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-apache
+cd %~p0Bearsampp/dev
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/dev
+cd %~p0Bearsampp/module-git
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-git
+cd %~p0Bearsampp/module-xdc
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-xdc
+cd %~p0Bearsampp/module-php
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-php
+cd %~p0Bearsampp/module-perl
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-perl
+cd %~p0Bearsampp/module-mysql
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-mysql
+cd %~p0Bearsampp/module-ngrok
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-ngrok
+cd %~p0Bearsampp/module-websvn
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-websvn
+cd %~p0Bearsampp/module-nodejs
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-nodejs
+cd %~p0Bearsampp/module-mongodb
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-mongodb
+cd %~p0Bearsampp/module-gitlist
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-gitlist
+cd %~p0Bearsampp/module-mariadb
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-mariadb
+cd %~p0Bearsampp/module-mailhog
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-mailhog
+cd %~p0Bearsampp/module-composer
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-composer
+cd %~p0Bearsampp/module-consolez
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-consolez
+cd %~p0Bearsampp/module-postgresql
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-postgresql
+cd %~p0Bearsampp/module-phpmyadmin
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-phpmyadmin
+cd %~p0Bearsampp/module-imagemagick
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-imagemagick
+cd %~p0Bearsampp/module-ghostscript
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-ghostscript
+cd %~p0Bearsampp/bearsampp.github.io
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/bearsampp.github.io
+cd %~p0Bearsampp/gitim
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/gitim
+cd %~p0Bearsampp/module-nginx
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-nginx
+cd %~p0Bearsampp/prerequisites
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/prerequisites
+cd %~p0Bearsampp/login-servers-enhanced
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/login-servers-enhanced
+cd %~p0Bearsampp/module-python
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-python
+cd %~p0Bearsampp/module-phpmemadmin
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-phpmemadmin
+cd %~p0Bearsampp/module-phppgadmin
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-phppgadmin
+cd %~p0Bearsampp/module-svn
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-svn
+cd %~p0Bearsampp/module-webgrind
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-webgrind
+cd %~p0Bearsampp/module-memcached
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-memcached
+cd %~p0Bearsampp/module-yarn
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/module-yarn
+cd %~p0Bearsampp/aetraymenu
+xcopy /e /y %~p0".github\*.*" ".github\"*.*
+ Bearsampp/aetraymenu
