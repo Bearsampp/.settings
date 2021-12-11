@@ -19,4 +19,4 @@ jobs:
           user_email: 'programming@hallhome.us'
           destination_repo: 'Bearsampp/website'
           #destination_folder: '/'
-          destination_branch: 'master'
+          destination_branch: 'main'
