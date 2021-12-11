@@ -1,6 +1,6 @@
 # Jetbrains
 /*.iml
-.idea/
+/.idea
 
 # Neard
 /.dev
