@@ -19,3 +19,6 @@ jobs:
         uses: "pascalgn/automerge-action@v0.14.3"
         env:
           API_TOKEN_GITHUB: "${{ secrets.API_TOKEN_GITHUB }}"
+          issue_comment: Auto sysnc with settings repo
+          MERGE_FILTER_AUTHOR: N6REJ
+          MERGE_DELETE_BRANCH: true
