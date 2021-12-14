@@ -9,13 +9,13 @@ group:
         dest: LICENSE
       - source: .gitignore
         dest: .gitignore
-      - source: .editor.config
-        dest: .editor.config
+      - source: .editorconfig
+        dest: .editorconfig
       - source: img
         dest: img
     repos: |
       Bearsampp/website@main
-      Bearsampp/Bearsampp.github.io
+      Bearsampp/Bearsampp.github.io@main
 
   # second group - Normal modules
   - files:
@@ -25,10 +25,10 @@ group:
         dest: LICENSE
       - source: .gitignore
         dest: .gitignore
-      - source: .editor.config
-        dest: .editor.config
+      - source: .editorconfig
+        dest: .editorconfig
       - source: img
         dest: img
     repos: |
-      Bearsampp/module-apache
-      Bearsampp/module-adminer
+      Bearsampp/module-apache@main
+      Bearsampp/module-adminer@main
