@@ -5,13 +5,12 @@ on:
       branches:
         - master
   workflow_dispatch:
-
 jobs:
-  copy-file:
+  sync:
     runs-on: ubuntu-latest
     steps:
-   #   - name: Checkout
-    #    uses: actions/checkout@v2
+#   - name: Checkout
+#    uses: actions/checkout@v2
 
   - name: Checkout Repository
       uses: actions/checkout@master
