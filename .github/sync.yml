@@ -3,7 +3,7 @@ group:
 
   # Test tebsite
   - files:
-      - source: ".settings/.git-sync/site/.github"
+      - source: ".git-sync/site/.github"
         dest: .github
       - source: LICENSE
         dest: LICENSE
@@ -30,5 +30,5 @@ group:
       - source: img
         dest: img
     repos: |
-      Bearsampp/module_apache
-      Bearsampp/module_adminer
+      Bearsampp/module-apache
+      Bearsampp/module-adminer
