@@ -1,0 +1,34 @@
+# File controlling which repos get what files.  See: https://github.com/BetaHuhn/repo-file-sync-action
+group:
+  -
+  # Test tebsite
+  - files:
+      - source: .git-sync/site/.github
+        dest: .github
+      - source: LICENSE
+        dest: LICENSE
+        source: .gitignore
+        dest: .gitignore
+        source: .editor.config
+        dest: .editor.config
+        source: img
+        dest: img
+    repos: |
+      Bearsampp/website
+      Bearsampp/Bearsampp.github.io
+
+  # second group - Normal modules
+  - files:
+      - source: .git-sync/modules/.github
+        dest: .github
+      - source: LICENSE
+        dest: LICENSE
+        source: .gitignore
+        dest: .gitignore
+        source: .editor.config
+        dest: .editor.config
+        source: img
+        dest: img
+    repos: |
+      Bearsampp/module_apache
+      Bearsampp/module_adminer
