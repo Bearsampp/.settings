@@ -14,7 +14,7 @@ group:
       - source: img
         dest: img
     repos: |
-      Bearsampp/website
+      Bearsampp/website@main
       Bearsampp/Bearsampp.github.io
 
   # second group - Normal modules
