@@ -3,7 +3,7 @@ group:
 
   # Test tebsite
   - files:
-      - source: .git-sync/site/.github
+      - source: ".settings/.git-sync/site/.github"
         dest: .github
       - source: LICENSE
         dest: LICENSE
