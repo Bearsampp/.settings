@@ -12,6 +12,7 @@ jobs:
       - run: bats -v
 
       - name: Repo-List-Generator
+        id: repo
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
       - name: Echo Output
         run: |
