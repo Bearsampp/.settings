@@ -19,6 +19,8 @@ group:
       - source: LICENSE
         dest: LICENSE
       - source: .gitignore
+        dest: .gitignore
+      - source: .editorconfig
         dest: .editorconfig
       - source: img
         dest: img
