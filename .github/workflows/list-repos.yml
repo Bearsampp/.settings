@@ -19,12 +19,3 @@ jobs:
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: output.txt
-  - name: MD
-    uses: mkungla/actions-set-text-output@v1
-    id: content
-    with:
-      text: |
-        # Set text output
-
-        A simple composite actions to set the job output while maintaining the text format e.g. markdown format.
-        echo ${{steps.repo.outputs.repoList}}
