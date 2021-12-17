@@ -19,7 +19,8 @@ jobs:
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: output.txt
-  - uses: mkungla/actions-set-text-output@v1
+  - name: MD
+    uses: mkungla/actions-set-text-output@v1
     id: content
     with:
       text: |
