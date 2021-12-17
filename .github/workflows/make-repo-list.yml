@@ -1,9 +1,9 @@
 Name: Repo list
-  on:
-    push:
-      branches:
-        - main
-    workflow_dispatch:
+on:
+push:
+  branches:
+    - main
+  workflow_dispatch:
   jobs:
     sync:
       runs-on: ubuntu-latest
@@ -15,6 +15,6 @@ Name: Repo list
     uses: yi-Xu-0100/repo-list-generator@v1.0.1
     with:
       my_token: ${{ secrets.GITHUB_TOKEN }}
-    - name: Echo Output
-      run: |
-        echo repoList: ${{steps.repo.outputs.repoList}}
+      - name: Echo Output
+        run: |
+          echo repoList: ${{steps.repo.outputs.repoList}}
