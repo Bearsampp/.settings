@@ -10,9 +10,11 @@ group:
         dest: .editorconfig
       - source: img
         dest: img
+        deleteOrphaned: true
     repos: |
       Bearsampp/website
       Bearsampp/Bearsampp.github.io
+
   - files:
       - source: .git-sync/modules/.github
         dest: .github
@@ -24,6 +26,7 @@ group:
         dest: .editorconfig
       - source: img
         dest: img
+        deleteOrphaned: true
     repos: |
       Bearsampp/module-apache
       Bearsampp/module-adminer
