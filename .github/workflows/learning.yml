@@ -16,4 +16,4 @@ jobs:
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
       - name: Echo Output
         run: |
-          echo repoList: ${{steps.repo.outputs.repoList}}
+          echo repoList: ${{steps.repo.outputs.repoList}} >> output.txt
