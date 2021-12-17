@@ -27,3 +27,5 @@ group:
     repos: |
       Bearsampp/module-apache
       Bearsampp/module-adminer
+      deleteOrphaned: true
+
