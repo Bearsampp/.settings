@@ -25,5 +25,5 @@ group:
       - source: img
         dest: img
     repos: |
-      Bearsampp/module_apache
-      Bearsampp/module_adminer
+      Bearsampp/module-apache
+      Bearsampp/module-adminer
