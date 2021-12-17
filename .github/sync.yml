@@ -16,9 +16,10 @@ group:
   - files:
       - source: .git-sync/modules/.github
         dest: .github
-            - LICENSE
-            - .gitignore
-            - .editorconfig
+      - source: LICENSE
+        dest: LICENSE
+      - source: .gitignore
+        dest: .editorconfig
       - source: img
         dest: img
     repos: |
