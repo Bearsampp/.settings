@@ -18,7 +18,8 @@ jobs:
         run: |
           printf "${{steps.repo.outputs.repoList}}" > "output.txt"
 
-      - uses: GuillaumeFalourd/command-output-file-action@v1
+      - name: To File
+        uses: GuillaumeFalourd/command-output-file-action@v1
         with:
           command_line: ls -lha
           output_file_name: output.txt
