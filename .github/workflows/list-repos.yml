@@ -17,5 +17,5 @@ jobs:
       - name: To File
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: printf ${{steps.repo.outputs.repoList}}
+          command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: output.txt
