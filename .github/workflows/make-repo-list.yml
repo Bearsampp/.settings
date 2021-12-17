@@ -1,6 +1,4 @@
-- name: Get Repo List
-  id: Bearsampp
-        - name: Repo-List-Generator
+ - name: Repo-List-Generator
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
           - name: Echo Output
         run: |
