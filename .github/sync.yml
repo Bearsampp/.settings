@@ -6,8 +6,8 @@ group:
         dest: LICENSE
       - source: .gitignore
         dest: .gitignore
-      - source: .editor.config
-        dest: .editor.config
+      - source: .editorconfig
+        dest: .editorconfig
       - source: img
         dest: img
     repos: |
@@ -25,8 +25,8 @@ group:
         dest: .gitignore
         deleteOrphaned: true
 
-      - source: .editor.config
-        dest: .editor.config
+      - source: .editorconfig
+        dest: .editorconfig
         deleteOrphaned: true
 
       - source: img
