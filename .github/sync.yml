@@ -16,23 +16,11 @@ group:
   - files:
       - source: .git-sync/modules/.github
         dest: .github
-        deleteOrphaned: true
-      - source: LICENSE
-        dest: LICENSE
-        deleteOrphaned: true
-
-      - source: .gitignore
-        dest: .gitignore
-        deleteOrphaned: true
-
-      - source: .editorconfig
-        dest: .editorconfig
-        deleteOrphaned: true
-
+            - LICENSE
+            - .gitignore
+            - .editorconfig
       - source: img
         dest: img
-        deleteOrphaned: true
-
     repos: |
       Bearsampp/module-apache
       Bearsampp/module-adminer
