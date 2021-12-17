@@ -1,4 +1,4 @@
-name: learn-github-actions
+name: Save repolist
 on: [push]
 jobs:
   check-bats-version:
@@ -16,4 +16,4 @@ jobs:
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
       - name: Echo Output
         run: |
-          printf ${{steps.repo.outputs.repoList}} > output.txt
+          printf "${{steps.repo.outputs.repoList}}" > "output.txt"
