@@ -1,5 +1,5 @@
 name: Save repolist
-on: [push]
+on: [ push ]
 jobs:
   check-bats-version:
     runs-on: ubuntu-latest
@@ -14,19 +14,12 @@ jobs:
       - name: Repo-List-Generator
         id: repo
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
-      - name: To File
-        uses: GuillaumeFalourd/command-output-file-action@v1
-        with:
-          command_line: echo ${{steps.repo.outputs.repoList}}
-          output_file_name: current-repos.md
-      - uses: GuillaumeFalourd/git-commit-push@v1
-        with:
-          file: current-repos.md
+           echo ${{steps.repo.outputs.repoList}} > list.txt
       - name: pandoc
       uses: docker://pandoc/core:2.9
         with:
-           args: >-  # allows you to break string into multiple lines
-              --standalone
-              --output=index.html
-              current-repos.md
+          args: >-  # allows you to break string into multiple lines
+            --standalone
+            --output=index.html
+            list.txt
 
