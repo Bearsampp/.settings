@@ -22,4 +22,11 @@ jobs:
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           file: current-repos.md
+      - name: pandoc
+      uses: docker://pandoc/core:2.9
+        with:
+           args: >-  # allows you to break string into multiple lines
+              --standalone
+              --output=index.html
+              current-repos.md
 
