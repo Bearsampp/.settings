@@ -18,4 +18,7 @@ jobs:
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
-          output_file_name: output.txt
+          output_file_name: current-repos.md
+      - name: commit file
+       uses: GuillaumeFalourd/git-commit-push@v1
+        file: current-repos.md
