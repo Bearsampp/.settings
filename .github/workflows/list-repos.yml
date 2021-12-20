@@ -19,6 +19,7 @@ jobs:
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: current-repos.md
-      - name: commit file
-       uses: GuillaumeFalourd/git-commit-push@v1
-        file: current-repos.md
+      - uses: GuillaumeFalourd/git-commit-push@v1
+        with:
+          file: current-repos.md
+
