@@ -35,7 +35,7 @@ jobs:
         with:
           find: ","
           replace: "\n"
-          include: ${{ steps.findandreplace.outputs.value }}
+          include: ${{steps.repo.outputs.repoList}}
 
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
