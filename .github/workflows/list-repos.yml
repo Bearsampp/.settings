@@ -32,7 +32,7 @@ jobs:
       - name: To File - mad9000
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.findandreplace.outputs.value }}'
+          command_line: echo ${{ steps.findandreplace.outputs.value }}
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
