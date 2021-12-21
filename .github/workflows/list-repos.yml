@@ -25,6 +25,13 @@ jobs:
             find: ","
             replace: "\n"
             include: "current-repos.md"
+      - name: Find-and-replace settings
+        uses: mad9000/actions-find-and-replace-string@2
+        id: findandreplace
+        with:
+          source: "current-repos.md"
+          find: '.settings,'
+          replace: ''
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
