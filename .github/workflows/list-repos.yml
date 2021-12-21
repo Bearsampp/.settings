@@ -20,8 +20,8 @@ jobs:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: current-repos.md
       - name: Find and Replace
-      uses: jacobtomlinson/gha-find-replace@v2
-          with:
+        uses: jacobtomlinson/gha-find-replace@v2
+        with:
             find: ","
             replace: "\n"
             include: "current-repos.md"
