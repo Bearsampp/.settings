@@ -26,6 +26,8 @@ jobs:
             find: ","
             replace: "\n"
             include: ${{steps.repo.outputs.repoList}}
+            command_line: echo ${{steps.repo.outputs.repoList}}
+            output_file_name: current-repos.md
 
       - name: Find-and-replace settings
         uses: mad9000/actions-find-and-replace-string@2
