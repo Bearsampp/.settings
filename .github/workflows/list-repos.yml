@@ -28,10 +28,18 @@ jobs:
           find: ".settings,"
           replace: ''
 
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        id: gha
+        with:
+          find: ","
+          replace: "\n"
+          include: ${{ steps.findandreplace.outputs.value }}
+
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.findandreplace.outputs.value }}
+          command_line: echo ${{ steps.gha.outputs.value }}
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
