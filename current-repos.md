@@ -1,4 +1,4 @@
-^$
+\n
 Bearsampp
 bearsampp.github.io
 dev
