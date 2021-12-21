@@ -24,6 +24,6 @@ jobs:
             --output=index.html
             list.txt
       - name: Commit
-      uses: GuillaumeFalourd/git-commit-push@v1
+        uses: GuillaumeFalourd/git-commit-push@v1
         with:
-          files: index.html
+          files: index.html list.txt
