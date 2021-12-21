@@ -19,12 +19,12 @@ jobs:
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: current-repos.md
+      - name: Find and Replace
+      uses: jacobtomlinson/gha-find-replace@v2
+          with:
+            find: ","
+            replace: "\n"
+            include: "current-repos.md"
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        with:
-          find: ","
-          replace: "\n"
-          include: "current-repos.md" # Will match all README.md files in any nested directory
