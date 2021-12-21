@@ -28,7 +28,7 @@ jobs:
       - name: Remove .settings
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-           find: ^\.settings$
+           find: ".settings"
            replace: ^$
            regex: true
            include: "current-repos.md"
