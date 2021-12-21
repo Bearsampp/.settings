@@ -49,6 +49,6 @@ jobs:
           include: current-repos.md
 
       # Now that everything is done lets actually physically create the file.
-      - uses: GuillaumeFalourd/git-commit-push@v1
+      - uses: GuillaumeFalourd/git-commit-push@main
         with:
           files: current-repos.md
