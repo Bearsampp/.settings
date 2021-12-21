@@ -31,7 +31,14 @@ jobs:
         with:
           source: "current-repos.md"
           find: ".settings"
-          replace: '&&'
+          replace: ''
+
+      - name: To File - final
+        uses: GuillaumeFalourd/command-output-file-action@v1
+        with:
+          command_line: echo ${{ steps.findandreplace.outputs.value }}
+          output_file_name: current-repos.md
+
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
