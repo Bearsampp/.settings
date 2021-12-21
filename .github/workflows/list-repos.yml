@@ -35,6 +35,14 @@ jobs:
           command_line: echo ${{ steps.findandreplace.outputs.value }}
           output_file_name: current-repos.md
 
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        id: gha
+        with:
+          find: ","
+          replace: "\n"
+          include: current-repos.md
+
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
