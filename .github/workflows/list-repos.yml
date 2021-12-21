@@ -43,7 +43,9 @@ jobs:
           include: ${{ steps.check.outputs.FANDR }}
 
       - name: store output
-        run: echo '::set-output name=GHAOUT::${{ steps.gha.outputs.value }}'
+        run: echo "::set-output name=GHAOUT::${{ steps.gha.outputs.value }}"
+        run: echo '"gha- ${{ steps.GHAOUT.outputs.value }}"
+
 
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
