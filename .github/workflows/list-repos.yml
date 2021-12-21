@@ -42,10 +42,13 @@ jobs:
           replace: "\n"
           include: ${{ steps.check.outputs.FANDR }}
 
+      - name: store output
+        run: echo '::set-output name=GHAOUT::${{ steps.gha.outputs.value }}'
+
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.gha.outputs.value }}
+          command_line: echo ${{ steps.GHAOUT.outputs.value }}
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
