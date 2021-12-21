@@ -23,4 +23,7 @@ jobs:
             --standalone
             --output=index.html
             list.txt
-
+      - name: Commit
+      uses: GuillaumeFalourd/git-commit-push@v1
+        with:
+          files: index.html
