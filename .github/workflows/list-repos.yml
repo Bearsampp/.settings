@@ -29,30 +29,10 @@ jobs:
           find: ".settings,"
           replace: ''
 
-      - name: check output
-        run: echo '::set-output name=FANDR::${{ steps.findandreplace.outputs.value }}'
-        id: check
-      - name: check set
-        run: echo "The list is ${{ steps.check.outputs.FANDR }}"
-
       - name: To File - mad9000
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.check.outputs.FANDR }}
-          output_file_name: current-repos.md
-
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        id: gha
-        with:
-          find: ","
-          replace: "\n"
-          include: current-repos.md
-
-      - name: To File - final
-        uses: GuillaumeFalourd/command-output-file-action@v1
-        with:
-          command_line: echo ${{ steps.gha.outputs.value }}
+          command_line: echo ${{ steps.findandreplace.outputs.value }}'
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
