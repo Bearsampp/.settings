@@ -19,12 +19,14 @@ jobs:
         with:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: current-repos.md
+
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
             find: ","
             replace: "\n"
-            include: "current-repos.md"
+            include: ${{steps.repo.outputs.repoList}}
+
       - name: Find-and-replace settings
         uses: mad9000/actions-find-and-replace-string@2
         id: findandreplace
