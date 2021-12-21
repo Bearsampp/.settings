@@ -44,8 +44,9 @@ jobs:
 
       - name: store output
         run: echo "::set-output name=GHAOUT::${{ steps.gha.outputs.value }}"
+        id: check2
       - name: echo out
-        run: echo "gha- ${{ steps.GHAOUT.outputs.value }}"
+        run: echo "gha- ${{ steps.check2.outputs.GHAOUT }}"
 
 
       - name: To File - final
