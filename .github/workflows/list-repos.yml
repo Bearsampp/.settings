@@ -20,26 +20,27 @@ jobs:
           command_line: echo ${{steps.repo.outputs.repoList}}
           output_file_name: current-repos.md
 
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        id: gha
-        with:
-            find: ","
-            replace: "\n"
-            include: ${{steps.repo.outputs.repoList}}
-
       - name: Find-and-replace settings
         uses: mad9000/actions-find-and-replace-string@2
         id: findandreplace
         with:
           source: ${{steps.repo.outputs.repoList}}
-          find: ".settings"
+          find: ".settings,"
           replace: ''
+
+
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        id: gha
+        with:
+          find: ","
+          replace: "\n"
+          include: ${{ steps.findandreplace.outputs.value }}
 
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.findandreplace.outputs.value }}
+          command_line: echo ${{ steps.gha.outputs.value }}
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
