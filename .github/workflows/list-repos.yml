@@ -30,7 +30,7 @@ jobs:
         with:
            find: ".settings\n"
            replace: ""
-           inlcude: "current-repos.md"
+           include: "current-repos.md"
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
