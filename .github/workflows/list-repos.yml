@@ -22,11 +22,13 @@ jobs:
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         with:
-            find: ".settings,"
-            replace: ""
             find: ","
             replace: "\n"
             include: "current-repos.md"
+        with:
+           find: ".settings\n"
+           replace: ""
+           inlcude: "current-repos.md"
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
           files: current-repos.md
