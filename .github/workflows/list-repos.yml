@@ -30,6 +30,9 @@ jobs:
 
       - name: check output
         run: echo '::set-output name=FANDR::${{ steps.findandreplace.outputs.value }}'
+        id: check
+      - name: check set
+        run: echo "The list is ${{ steps.check,outputs.FANDR }}"
 
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
