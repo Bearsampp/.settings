@@ -44,6 +44,7 @@ jobs:
 
       - name: store output
         run: echo "::set-output name=GHAOUT::${{ steps.gha.outputs.value }}"
+      - name: echo out
         run: echo "gha- ${{ steps.GHAOUT.outputs.value }}"
 
 
