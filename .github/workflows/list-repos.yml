@@ -28,6 +28,9 @@ jobs:
           find: ".settings,"
           replace: ''
 
+      - name: check output
+        run: echo '::set-output name=FANDR::${{ steps.findandreplace.outputs.value }}
+
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         id: gha
