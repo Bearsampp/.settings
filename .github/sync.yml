@@ -8,8 +8,8 @@ group:
         dest: .gitignore
       - source: .editorconfig
         dest: .editorconfig
-      - source: img
-        dest: img
+      - source: img/
+        dest: img/
         deleteOrphaned: true
     repos: |
       Bearsampp/website
@@ -24,8 +24,8 @@ group:
         dest: .gitignore
       - source: .editorconfig
         dest: .editorconfig
-      - source: img
-        dest: img
+      - source: img/
+        dest: img/
         deleteOrphaned: true
     repos: |
       Bearsampp/module-apache
