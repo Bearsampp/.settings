@@ -28,11 +28,17 @@ jobs:
             replace: "\n"
             include: ${{steps.repo.outputs.repoList}}
 
+      - name: To File - step 2
+        uses: GuillaumeFalourd/command-output-file-action@v1
+        with:
+          command_line: echo ${{ steps.gha.outputs.value }}
+          output_file_name: current-repos.md
+
       - name: Find-and-replace settings
         uses: mad9000/actions-find-and-replace-string@2
         id: findandreplace
         with:
-          source: ${{ steps.gha.outputs.value }}
+          source: "current-repos.md"
           find: ".settings"
           replace: ''
 
