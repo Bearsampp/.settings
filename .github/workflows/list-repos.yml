@@ -14,6 +14,7 @@ jobs:
       - name: Repo-List-Generator
         id: repo
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
+
       - name: To File
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
@@ -34,25 +35,24 @@ jobs:
       - name: check set
         run: echo "The list is ${{ steps.check.outputs.FANDR }}"
 
+      - name: To File - mad9000
+        uses: GuillaumeFalourd/command-output-file-action@v1
+        with:
+          command_line: echo ${{ steps.check.outputs.FANDR }}
+          output_file_name: current-repos.md
+
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         id: gha
         with:
           find: ","
           replace: "\n"
-          include: ${{ steps.check.outputs.FANDR }}
-
-      - name: store output
-        run: echo "::set-output name=GHAOUT::${{ steps.gha.outputs.value }}"
-        id: check2
-      - name: echo out
-        run: echo "gha- ${{ steps.check2.outputs.GHAOUT }}"
-
+          include: current-repos.md
 
       - name: To File - final
         uses: GuillaumeFalourd/command-output-file-action@v1
         with:
-          command_line: echo ${{ steps.GHAOUT.outputs.value }}
+          command_line: echo ${{ steps.gha.outputs.value }}
           output_file_name: current-repos.md
 
       - uses: GuillaumeFalourd/git-commit-push@v1
