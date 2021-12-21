@@ -43,7 +43,7 @@ jobs:
           include: ${{ steps.check.outputs.FANDR }}
 
       - name: store output
-        run: echo "::set-output name=GHAOUT::${{ steps.check.outputs.FANDR }}"
+        run: echo "::set-output name=GHAOUT::${{ steps.gha.outputs.value }}"
         id: check2
       - name: echo out
         run: echo "gha- ${{ steps.check2.outputs.GHAOUT }}"
