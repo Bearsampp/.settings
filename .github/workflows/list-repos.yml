@@ -29,8 +29,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         with:
            find: ".settings"
-           replace: ^$
-           regex: true
+           replace: ''
            include: "current-repos.md"
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
