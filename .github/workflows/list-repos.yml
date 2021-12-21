@@ -30,7 +30,7 @@ jobs:
         id: findandreplace
         with:
           source: "current-repos.md"
-          find: '.settings'
+          find: ".settings"
           replace: ''
       - uses: GuillaumeFalourd/git-commit-push@v1
         with:
