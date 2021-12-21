@@ -25,6 +25,8 @@ jobs:
             find: ","
             replace: "\n"
             include: "current-repos.md"
+      - name: Remove .settings
+        uses: jacobtomlinson/gha-find-replace@v2
         with:
            find: ".settings\n"
            replace: ""
