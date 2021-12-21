@@ -1,4 +1,4 @@
-\n
+.settings
 Bearsampp
 bearsampp.github.io
 dev
