@@ -28,7 +28,7 @@ jobs:
           replace: ''
 
       # Now remove fixed repos
-      - name: Find-and-replace settings
+      - name: Remove pages
         uses: mad9000/actions-find-and-replace-string@2
         id: pages
         with:
@@ -37,7 +37,7 @@ jobs:
          replace: ''
 
       # Now remove fixed repos
-      - name: Find-and-replace settings
+      - name: Remove website
         uses: mad9000/actions-find-and-replace-string@2
         id: website
         with:
@@ -46,7 +46,7 @@ jobs:
           replace: ''
 
       # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
-      - name: Find-and-replace settings
+      - name: prepend
         uses: mad9000/actions-find-and-replace-string@2
         id: preface
         with:
