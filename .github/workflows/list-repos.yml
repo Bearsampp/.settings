@@ -1,7 +1,7 @@
 name: Save repolist
 on: [ push ]
 jobs:
-  check-bats-version:
+  Repo-list:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -16,37 +16,46 @@ jobs:
         id: repo
         uses: yi-Xu-0100/repo-list-generator@v1.0.1
 
-      # For some dumb reason we need to physically save the file.
-      - name: To File
-        uses: GuillaumeFalourd/command-output-file-action@v1
-        with:
-          command_line: echo ${{steps.repo.outputs.repoList}}
-          output_file_name: current-repos.md
+      # ${{steps.repo.outputs.repoList}}
 
       # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
       - name: Find-and-replace settings
         uses: mad9000/actions-find-and-replace-string@2
-        id: findandreplace
+        id: settings
         with:
           source: ${{steps.repo.outputs.repoList}}
           find: ".settings,"
           replace: ''
 
-      # Now we need to save the file again because jacobtomlinson/gha-find-replace@v2 won't work properly otherwise.
-      - name: To File - mad9000
-        uses: GuillaumeFalourd/command-output-file-action@v1
+      # Now remove fixed repos
+      - name: Find-and-replace settings
+        uses: mad9000/actions-find-and-replace-string@2
+        id: pages
         with:
-          command_line: echo ${{ steps.findandreplace.outputs.value }}
-          output_file_name: current-repos.md
+          source: ${{ steps.settings.outputs.value }}
+          find: "bearsampp.github.io,"
+         replace: ''
 
-      # Now that its saved replace , with eol
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        id: gha
+      # Now remove fixed repos
+      - name: Find-and-replace settings
+        uses: mad9000/actions-find-and-replace-string@2
+        id: website
         with:
+          source: ${{ steps.pages.outputs.value }}
+          find: "website,"
+          replace: ''
+
+      # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
+      - name: Find-and-replace settings
+        uses: mad9000/actions-find-and-replace-string@2
+        id: preface
+        with:
+          source: ${{ steps.website.outputs.value }}
           find: ","
-          replace: "\nBearsampp/"
-          include: current-repos.md
+          replace: '\nBearsampp/'
+
+      - name: Get the final output
+        run: echo "The replaced value is ${{ steps.preface.outputs.value }}"
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
