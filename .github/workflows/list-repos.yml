@@ -40,12 +40,12 @@ jobs:
           output_file_name: current-repos.md
 
       # Now that its saved replace , with eol
-      - name: Find and Replace
+      - name: Prepend Bearsampp
         uses: jacobtomlinson/gha-find-replace@v2
         id: gha
         with:
           find: ","
-          replace: "\n"
+          replace: "\nBearsampp/"
           include: current-repos.md
 
       # Now that everything is done lets actually physically create the file.
