@@ -33,4 +33,3 @@ Bearsampp/module-yarn
 Bearsampp/modules-untouched
 Bearsampp/prerequisites
 Bearsampp/startbootstrap-clean-blog
-Bearsampp/
