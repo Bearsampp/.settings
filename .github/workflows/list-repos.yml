@@ -40,7 +40,7 @@ jobs:
         id: website
         with:
           source: ${{steps.pages.outputs.value}}
-          find: "website,"
+          find: "website"
           replace: ''
 
       # Now we need to save the file again because jacobtomlinson/gha-find-replace@v2 won't work properly otherwise.
@@ -57,7 +57,7 @@ jobs:
         with:
           find: ","
           replace: "\nBearsampp/"
-          include: current-repos.md}
+          include: current-repos.md
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
