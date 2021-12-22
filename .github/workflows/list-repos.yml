@@ -45,7 +45,7 @@ jobs:
         id: gha
         with:
           find: ","
-          replace: "\n"
+          replace: "\nBearsampp/"
           include: current-repos.md
 
       # Now that everything is done lets actually physically create the file.
