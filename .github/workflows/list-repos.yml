@@ -31,7 +31,7 @@ jobs:
         id: pages
         with:
           source: ${{ steps.settings.outputs.value }}
-          find: "bearsampp.github.io,"
+          find: 'bearsampp.github.io,'
           replace: ''
 
       # Now remove fixed repos
