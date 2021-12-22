@@ -53,7 +53,7 @@ jobs:
         uses: mad9000/actions-find-and-replace-string@2
         id: pages
         with:
-          source: ${{ steps.findandreplace.outputs.value }}
+          source: "current-repos.md"
           find: "Bearsampp/bearsampp.github.io"
           replace: ''
 
