@@ -13,3 +13,7 @@ This is eqv to https://docs.joomla.org/Joomla_CodeSniffer
 6. after that's installed type `gh clone-org -y Bearsampp`
 
 Thats all there is too it.  [Full instructions here](https://github.com/matt-bartel/gh-clone-org)
+
+
+Contain an action, list-repos.yml, that will automatically create a list of ALL repo's and put it into "current-repos.md".
+It specifically removes the 'website', '.settings' & 'bearsampp.github.io' repo as those are static and will always be preset.
