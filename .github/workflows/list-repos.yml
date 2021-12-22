@@ -43,17 +43,17 @@ jobs:
           find: "website,"
           replace: ''
 
-      # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
-      - name: prepend
-        uses: mad9000/actions-find-and-replace-string@2
-        id: preface
+      # Now that its saved replace , with eol
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        id: gha
         with:
-          source: ${{ steps.website.outputs.value }}
           find: ","
-          replace: '\nBearsampp/'
+          replace: "\nBearsampp/"
+          include: ${{ steps.website.outputs.value }}
 
       - name: Get the final output
-        run: echo "The replaced value is ${{ steps.preface.outputs.value }}"
+        run: echo "The replaced value is ${{ steps.gha.outputs.value }}"
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
