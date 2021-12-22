@@ -15,5 +15,5 @@ This is eqv to https://docs.joomla.org/Joomla_CodeSniffer
 Thats all there is too it.  [Full instructions here](https://github.com/matt-bartel/gh-clone-org)
 
 
-Contain an action, list-repos.yml, that will automatically create a list of ALL repo's and put it into "current-repos.md".
+Contains an action, list-repos.yml, that will automatically create a list of ALL repo's and put it into "current-repos.md".
 It specifically removes the 'website', '.settings' & 'bearsampp.github.io' repo as those are static and will always be preset.
