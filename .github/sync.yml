@@ -30,4 +30,5 @@ group:
     repos: |
       Bearsampp/module-apache
       Bearsampp/module-adminer
+      Bearsampp/module-filezilla
 
