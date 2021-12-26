@@ -11,6 +11,7 @@ group:
       - source: img
         dest: img
         deleteOrphaned: true
+        BRANCH_PREFIX: dev
     repos: |
       Bearsampp/website
       Bearsampp/Bearsampp.github.io

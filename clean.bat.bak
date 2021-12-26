@@ -1,0 +1,217 @@
+cd ..
+cd Bearsampp
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/dev
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/login-servers-enhanced
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-adminer
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-apache
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-composer
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-consolez
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-filezilla
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-ghostscript
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-git
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-gitlist
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-imagemagick
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-mailhog
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-mariadb
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-memcached
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-mongodb
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-mysql
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-nginx
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-ngrok
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-nodejs
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-perl
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-phpmemadmin
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-phpmyadmin
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-phppgadmin
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-postgresql
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-python
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-ruby
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-svn
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-webgrind
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-websvn
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-xdc
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/module-yarn
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/modules-untouched
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/prerequisites
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd Bearsampp/startbootstrap-clean-blog
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
+cd 
+git rm -r *.nrd
+git add *.ber
+git commit -m "changing extensions"
+git push
+cd ..
