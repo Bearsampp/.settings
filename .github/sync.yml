@@ -1,7 +1,10 @@
 group:
+
+  # Webiste ONLY
   - files:
       - source: .git-sync/site/.github
         dest: .github
+        deleteOrphaned: true # Removes deleted files
       - source: LICENSE
         dest: LICENSE
       - source: .gitignore
@@ -15,9 +18,11 @@ group:
       Bearsampp/website
       Bearsampp/Bearsampp.github.io@dev
 
+# Add modules since they share common needs
   - files:
       - source: .git-sync/modules/.github
         dest: .github
+        deleteOrphaned: true # Removes deleted files
       - source: LICENSE
         dest: LICENSE
       - source: .gitignore
