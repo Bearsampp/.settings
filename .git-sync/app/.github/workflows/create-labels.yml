@@ -3,7 +3,8 @@ name: Create labels
 on:
   push:
     branches:
-      - 'dev'  # Don't change this. On the 'pages' source is in dev branch and auto-created & published in main/master
+      - 'main'
+      - 'master'
     paths:
       - '.github/labels.yml'
       - '.github/workflows/create-labels.yml'
