@@ -24,7 +24,7 @@ jobs:
         name: Set up Ruby
         uses: actions/setup-ruby@v1
         with:
-          ruby-version: 2.6.x
+          ruby-version: 2.6.0
       -
         name: Set up gems cache
         uses: actions/cache@v2
