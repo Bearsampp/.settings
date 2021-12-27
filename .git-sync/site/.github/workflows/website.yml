@@ -68,13 +68,13 @@ jobs:
           #htmlproofer ./web/download --allow-missing-href --allow-hash-href --assume_extension --check-favicon --http-status-ignore 403 --only-4xx --alt-ignore "/.*/" --log-level=:debug
       -
         name: Check GitHub Pages status
-        uses: crazy-max/ghaction-github-status@latest
+        uses: crazy-max/ghaction-github-status@2.2.0
         with:
           pages_threshold: major_outage
       -
         name: Deploy
         if: success() && github.event_name != 'pull_request'
-        uses: crazy-max/ghaction-github-pages@latest
+        uses: crazy-max/ghaction-github-pages@2.5.0
         with:
           target_branch: main
           build_dir: web
