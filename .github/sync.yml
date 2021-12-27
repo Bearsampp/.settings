@@ -13,7 +13,7 @@ group:
         deleteOrphaned: true
     repos: |
       Bearsampp/website
-      Bearsampp/Bearsampp.github.io/dev
+      Bearsampp/Bearsampp.github.io@dev
 
   - files:
       - source: .git-sync/modules/.github
