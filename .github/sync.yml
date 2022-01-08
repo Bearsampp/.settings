@@ -18,6 +18,7 @@ group:
       Bearsampp/website
       Bearsampp/Bearsampp.github.io@dev
       Bearsampp/Bearsampp.github.io@master
+      Bearsampp/construction
 
 # Add modules since they share common needs
   - files:
