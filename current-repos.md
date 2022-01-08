@@ -32,5 +32,6 @@ Bearsampp/module-websvn
 Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
+Bearsampp/neard.github.io
 Bearsampp/prerequisites
 Bearsampp/startbootstrap-clean-blog
