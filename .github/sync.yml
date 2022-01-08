@@ -34,6 +34,7 @@ group:
         dest: img
         deleteOrphaned: true
     repos: |
+      Bearsampp/Bearsampp
       Bearsampp/module-apache
       Bearsampp/module-adminer
       Bearsampp/module-filezilla
