@@ -17,6 +17,7 @@ group:
     repos: |
       Bearsampp/website
       Bearsampp/Bearsampp.github.io@dev
+      Bearsampp/Bearsampp.github.io@master
 
 # Add modules since they share common needs
   - files:
