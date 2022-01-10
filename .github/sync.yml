@@ -6,16 +6,11 @@ group:
         dest: .github
         deleteOrphaned: true # Removes deleted files
       - source: LICENSE
-        dest: LICENSE
       - source: .gitignore
-        dest: .gitignore
       - source: .editorconfig
-        dest: .editorconfig
       - source: img
-        dest: img
         deleteOrphaned: true
-      - source: favicon.ico
-        dest: /
+      - source: /favicon.ico
     repos: |
       Bearsampp/website
       Bearsampp/Bearsampp.github.io@dev
@@ -26,10 +21,10 @@ group:
     - source: img
       dest: img
       deleteOrphaned: true
-    - source: favicon.ico
-      dest: /
+    - source: /favicon.ico
     - source: .git-sync/construction/img
       dest: img
+      deleteOrphaned: true
     repos: |
       Bearsampp/construction
 
@@ -39,13 +34,9 @@ group:
         dest: .github
         deleteOrphaned: true # Removes deleted files
       - source: LICENSE
-        dest: LICENSE
       - source: .gitignore
-        dest: .gitignore
       - source: .editorconfig
-        dest: .editorconfig
       - source: img
-        dest: img
         deleteOrphaned: true
     repos: |
       Bearsampp/Bearsampp
