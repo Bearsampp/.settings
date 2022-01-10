@@ -18,6 +18,8 @@ group:
 
   # Construction ONLY
   - files:
+    - source: .git-sync/construction/.github
+      dest: .github
     - source: img
       dest: img
       deleteOrphaned: true
