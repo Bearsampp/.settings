@@ -14,10 +14,23 @@ group:
       - source: img
         dest: img
         deleteOrphaned: true
+      - source: favicon.ico
+        dest: /
     repos: |
       Bearsampp/website
       Bearsampp/Bearsampp.github.io@dev
       Bearsampp/Bearsampp.github.io@master
+
+  # Construction ONLY
+  - files:
+    - source: img
+      dest: img
+      deleteOrphaned: true
+    - source: favicon.ico
+      dest: /
+    - source: .git-sync/construction/img
+      dest: img
+    repos: |
       Bearsampp/construction
 
 # Add modules since they share common needs
