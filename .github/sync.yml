@@ -5,6 +5,14 @@ group:
       - source: .git-sync/site/.github
         dest: .github
         deleteOrphaned: true # Removes deleted files
+      - source: .github/CODEOWNERS
+        dest: .github
+      - source: .github/dependabot.yml
+        dest: .github
+      - source: .github/FUNDING.yml
+        dest: .github
+      - source: .github
+        dest: .github
       - LICENSE
       - .gitignore
       - .editorconfig
@@ -20,6 +28,12 @@ group:
   - files:
     - source: .git-sync/construction/.github
       dest: .github
+    - source: .github/CODEOWNERS
+      dest: .github
+    - source: .github/dependabot.yml
+      dest: .github
+    - source: .github/FUNDING.yml
+      dest: .github
     - source: img
       dest: img
       deleteOrphaned: true
@@ -34,9 +48,15 @@ group:
       - source: .git-sync/modules/.github
         dest: .github
         deleteOrphaned: true # Removes deleted files
+      - source: .github/CODEOWNERS
+        dest: .github
+      - source: .github/dependabot.yml
+        dest: .github
+      - source: .github/FUNDING.yml
+        dest: .github
       - LICENSE
       - .gitignore
-      - source: .editorconfig
+      - .editorconfig
       - source: img
         deleteOrphaned: true
     repos: |
