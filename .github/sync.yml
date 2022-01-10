@@ -24,7 +24,6 @@ group:
     - favicon.ico
     - source: .git-sync/construction/img
       dest: img
-      deleteOrphaned: true
     repos: |
       Bearsampp/construction
 
