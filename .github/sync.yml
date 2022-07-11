@@ -1,39 +1,5 @@
 group:
 
-  # Webiste ONLY
-  - files:
-      - source: .git-sync/site/.github
-        dest: .github
-        deleteOrphaned: true # Removes deleted files
-      - source: .github/CODEOWNERS
-      - source: .github/dependabot.yml
-      - source: .github/FUNDING.yml
-      - LICENSE
-      - .gitignore
-      - .editorconfig
-      - source: img
-        deleteOrphaned: true
-      - favicon.ico
-    repos: |
-      Bearsampp/website
-      Bearsampp/Bearsampp.github.io@dev
-      Bearsampp/Bearsampp.github.io@master
-
-  # Construction ONLY
-  - files:
-    - source: .git-sync/construction/.github
-      dest: .github
-    - source: .github/CODEOWNERS
-    - source: .github/dependabot.yml
-    - source: .github/FUNDING.yml
-    - source: img
-      deleteOrphaned: true
-    - favicon.ico
-    - source: .git-sync/construction/img
-      dest: img
-    repos: |
-      Bearsampp/construction
-
 # Add modules since they share common needs
   - files:
       - source: .git-sync/modules/.github
