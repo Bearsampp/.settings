@@ -1,5 +1,4 @@
 Bearsampp
-Bearsampp/Bearsampp.github.io
 Bearsampp/dev
 Bearsampp/login-servers-enhanced
 Bearsampp/module-adminer
@@ -32,6 +31,5 @@ Bearsampp/module-websvn
 Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
-Bearsampp/neard.github.io
 Bearsampp/prerequisites
 Bearsampp/startbootstrap-clean-blog
