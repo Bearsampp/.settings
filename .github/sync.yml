@@ -14,8 +14,8 @@ group:
       - LICENSE
       - .gitignore
       - .editorconfig
-      - source: img/Bearsampp-logo.png
-      - source: img/Bearsampp-32x32.png
+      - source: img
+        dest: img
         deleteOrphaned: true
     repos: |
         Bearsampp/Bearsampp
