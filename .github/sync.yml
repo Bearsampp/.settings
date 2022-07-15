@@ -10,6 +10,7 @@ group:
       - source: .github/FUNDING.yml
       - source: .github/labels.yml
       - source: .github/workflows/SUPPORT.md
+      - source: .gitignore
       - LICENSE
       - .gitignore
       - .editorconfig
