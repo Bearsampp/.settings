@@ -14,7 +14,7 @@ group:
       - .gitignore
       - .editorconfig
       - source: img
-      - dest: img
+        dest: img
         deleteOrphaned: true
     repos: |
         Bearsampp/Bearsampp
