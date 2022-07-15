@@ -15,7 +15,6 @@ Bearsampp/module-mariadb
 Bearsampp/module-memcached
 Bearsampp/module-mongodb
 Bearsampp/module-mysql
-Bearsampp/module-nginx
 Bearsampp/module-ngrok
 Bearsampp/module-nodejs
 Bearsampp/module-perl
