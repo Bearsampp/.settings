@@ -8,8 +8,7 @@ group:
       - source: .github/CODEOWNERS
       - source: .github/dependabot.yml
       - source: .github/FUNDING.yml
-      - source: .github/labels.yml
-      - source: .github/workflows/SUPPORT.md
+      - source: .github/SUPPORT.md
       - LICENSE
       - .gitignore
       - .editorconfig
