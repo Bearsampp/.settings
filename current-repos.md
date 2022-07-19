@@ -9,7 +9,6 @@ Bearsampp/module-filezilla
 Bearsampp/module-ghostscript
 Bearsampp/module-git
 Bearsampp/module-gitlist
-Bearsampp/module-imagemagick
 Bearsampp/module-mailhog
 Bearsampp/module-mariadb
 Bearsampp/module-memcached
