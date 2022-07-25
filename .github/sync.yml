@@ -5,10 +5,6 @@ group:
       - source: .git-sync/modules/.github
         dest: .github
         deleteOrphaned: true # Removes deleted files
-      - source: .github/CODEOWNERS
-      - source: .github/dependabot.yml
-      - source: .github/FUNDING.yml
-      - source: .github/SUPPORT.md
       - LICENSE
       - .gitignore
       - .editorconfig
