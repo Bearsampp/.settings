@@ -25,24 +25,6 @@ jobs:
           find: ".settings,"
           replace: ''
 
-      # Now remove fixed repos
-      - name: Remove pages
-        uses: mad9000/actions-find-and-replace-string@2
-        id: pages
-        with:
-          source: ${{steps.settings.outputs.value}}
-          find: 'bearsampp.github.io,'
-          replace: ''
-
-      # Now remove fixed repos
-      - name: Remove website
-        uses: mad9000/actions-find-and-replace-string@2
-        id: website
-        with:
-          source: ${{steps.pages.outputs.value}}
-          find: ",website"
-          replace: ''
-
       # Now we need to save the file again because jacobtomlinson/gha-find-replace@v2 won't work properly otherwise.
       - name: To File - mad9000
         uses: GuillaumeFalourd/command-output-file-action@v1
