@@ -8,9 +8,12 @@ group:
       - source: img/Bearsampp-logo-500x-500x-transparent.png
         dest: img/Bearsampp-logo.png
         deleteOrphaned: true
-          - LICENSE
-          - .gitignore
-          - .editorconfig
+      - source: LICENSE
+        dest: LICENSE
+      - source: .gitignore
+        dest: .gitignore
+      - source: .editorconfig
+        dest: editorconfig
     repos: |
         Bearsampp/Bearsampp
 
@@ -18,9 +21,12 @@ group:
       - source: img/Bearsampp-logo-500x-500x-transparent.png
         dest: img/Bearsampp-logo.png
         deleteOrphaned: true
-        - LICENSE
-        - .gitignore
-        - .editorconfig
+      - source: LICENSE
+        dest: LICENSE
+      - source: .gitignore
+        dest: .gitignore
+      - source: .editorconfig
+        dest: editorconfig
       - source: .git-sync/modules/.github/CODEOWNERS
           dest: .github/CODEOWNERS
       - source: .git-sync/modules/.github/FUNDING.yml
