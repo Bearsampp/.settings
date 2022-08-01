@@ -18,9 +18,9 @@ group:
       - source: img/Bearsampp-logo-500x-500x-transparent.png
         dest: img/Bearsampp-logo.png
         deleteOrphaned: true
-          - LICENSE
-          - .gitignore
-          - .editorconfig
+        - LICENSE
+        - .gitignore
+        - .editorconfig
       - source: .git-sync/modules/.github/CODEOWNERS
           dest: .github/CODEOWNERS
       - source: .git-sync/modules/.github/FUNDING.yml
