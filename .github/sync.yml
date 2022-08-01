@@ -13,7 +13,7 @@ group:
       - source: .gitignore
         dest: .gitignore
       - source: .editorconfig
-        dest: editorconfig
+        dest: .editorconfig
     repos: |
         Bearsampp/Bearsampp
 
@@ -26,7 +26,7 @@ group:
       - source: .gitignore
         dest: .gitignore
       - source: .editorconfig
-        dest: editorconfig
+        dest: .editorconfig
       - source: .git-sync/modules/.github/CODEOWNERS
         dest: .github/CODEOWNERS
       - source: .git-sync/modules/.github/FUNDING.yml
