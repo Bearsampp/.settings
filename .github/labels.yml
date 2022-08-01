@@ -8,7 +8,7 @@
   color: "b60205"
   description: ""
 - # Urgent
-  name: ":triangular_flag_on_post: Blocker
+  name: ":triangular_flag_on_post: Blocker"
   color: "FFFFFF"
   description: "Release blocker"
 - # dependencies
