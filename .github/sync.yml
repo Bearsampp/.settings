@@ -8,8 +8,8 @@ group:
       - LICENSE
       - .gitignore
       - .editorconfig
-      - source: img
-        dest: img
+      - source: img/Bearsampp-logo-500x-500x-transparent.png
+        dest: img/Bearsampp-logo-500x-500x-transparent.png
         deleteOrphaned: true
     repos: |
         Bearsampp/Bearsampp
