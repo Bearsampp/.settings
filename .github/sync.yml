@@ -9,7 +9,7 @@ group:
       - .gitignore
       - .editorconfig
       - source: img/Bearsampp-logo-500x-500x-transparent.png
-        dest: img/Bearsampp-logo-500x-500x-transparent.png
+        dest: img/Bearsampp-logo.png
         deleteOrphaned: true
     repos: |
         Bearsampp/Bearsampp
