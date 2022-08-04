@@ -5,8 +5,14 @@ group:
       - source: .git-sync/modules/.github
         dest: .github
         deleteOrphaned: true # Removes deleted files
-      - source: img/Bearsampp-logo-500x-500x-transparent.png
-        dest: img/Bearsampp-logo.png
+      - source: img/artwork/Bearsampp-with-text-stroked.svg
+        dest: img/Bearsampp-logo.svg
+      - source: img/artwork/tool.png
+        dest: img/tool.png
+      - source: img/artwork/binary.png
+        dest: img/binary.png
+      - source: img/artwork/application.png
+        dest: img/application.png
         deleteOrphaned: true
       - source: LICENSE
         dest: LICENSE
@@ -18,8 +24,8 @@ group:
         Bearsampp/Bearsampp
 
   - files:
-      - source: img/Bearsampp-logo-500x-500x-transparent.png
-        dest: img/Bearsampp-logo.png
+      - source: img/artwork/Bearsampp-with-text-stroked.svg
+        dest: img/Bearsampp-logo.svg
         deleteOrphaned: true
       - source: LICENSE
         dest: LICENSE
