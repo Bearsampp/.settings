@@ -9,4 +9,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           query: "Octocat in:readme"
-          max: 10
+          max: 50
