@@ -34,12 +34,12 @@ jobs:
           find: ","
           replace: "\nBearsampp/"
 
-      - name: Write File
-        uses: DamianReeves/write-file-action@v1.0
+      - name: Write to file
+        uses: frdrwrt/write-to-file@v1.3
         with:
-          path: ${{ env.home}}/current-repos.md
-          contents: ${{ steps.gha.outputs.value }}
-          write-mode: overwrite
+          content: ${{ steps.gha.outpus.value }}
+          filepath: /current-repos.md
+          mode: 0666
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
