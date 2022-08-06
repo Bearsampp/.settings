@@ -21,7 +21,7 @@ jobs:
         uses: mad9000/actions-find-and-replace-string@2
         id: settings
         with:
-          source: ${{steps.repo.outputs.repoList_PRIVATE}}
+          source: ${{ steps.repo.outputs.repoList_PRIVATE }}
           find: ".settings,"
           replace: ''
 
