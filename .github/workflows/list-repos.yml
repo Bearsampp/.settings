@@ -30,7 +30,7 @@ jobs:
         uses: jacobtomlinson/gha-find-replace@v2
         id: gha
         with:
-          source: {{steps.findandreplace.outputs.value}}
+          source: ${{steps.findandreplace.outputs.value}}
           find: ","
           replace: "\nBearsampp/"
 
@@ -38,7 +38,7 @@ jobs:
         uses: DamianReeves/write-file-action@v1.0
         with:
           path: ${{ env.home}}/current-repos.md
-          contents: {{steps.findandreplace.outputs.value}}
+          contents: ${{steps.findandreplace.outputs.value}}
           write-mode: overwrite
 
       # Now that everything is done lets actually physically create the file.
