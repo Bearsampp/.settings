@@ -26,14 +26,13 @@ jobs:
           replace: ''
 
       # Now that its saved replace , with eol
-      - name: Find-and-Replace
-        uses: mad9000/actions-find-and-replace-string@2
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
         id: gha
         with:
-          source: ${{ steps.settings.outputs.value }}
           find: ","
           replace: "\nBearsampp/"
-
+          include: ${{ steps.settings.outputs.value }}
 
       - name: Write to file
         uses: DamianReeves/write-file-action@master
