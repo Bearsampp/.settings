@@ -21,25 +21,25 @@ jobs:
         uses: mad9000/actions-find-and-replace-string@2
         id: settings
         with:
-          source: ${{steps.repo.outputs.repoList}}
+          source: ${{steps.repo.outputs.repoList_PRIVATE}}
           find: ".settings,"
           replace: ''
-
-      # Now we need to save the file again because jacobtomlinson/gha-find-replace@v2 won't work properly otherwise.
-      - name: Assert Command Line Output
-        uses: GuillaumeFalourd/assert-command-line-output@v2
-        with:
-          command_line: echo ${{steps.website.outputs.value}}
-          output_file_name: current-repos.md
 
       # Now that its saved replace , with eol
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
         id: gha
         with:
+          source: {{steps.findandreplace.outputs.value}}
           find: ","
           replace: "\nBearsampp/"
-          include: current-repos.md
+
+      - name: Write File
+        uses: DamianReeves/write-file-action@v1.0
+        with:
+          path: ${{ env.home}}/current-repos.md
+          contents: {{steps.findandreplace.outputs.value}}
+          write-mode: overwrite
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
