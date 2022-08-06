@@ -8,7 +8,7 @@ updates:
       timezone: "America/Chicago"
     labels:
       - ":robot: bot"
-# Set the access for individual scopes, or use permissions: write-all
+
 permissions:
   pull-requests: write
   issues: write
