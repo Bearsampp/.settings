@@ -8,7 +8,5 @@ jobs:
         uses: koj-co/readme-repos-list@master
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
-          query: "Octocat in:readme"
+          query: "*"
           max: 50
-          start: REPO_LIST
-          end: REPO_LIST
