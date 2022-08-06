@@ -44,7 +44,7 @@ jobs:
       # Now that its saved replace , with eol
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
-        id: gha
+        id: gha2
         with:
           find: ","
           replace: "\nBearsampp/"
