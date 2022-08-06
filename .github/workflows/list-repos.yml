@@ -37,7 +37,7 @@ jobs:
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
         with:
-          content: ${{ steps.gha.outpus.value }}
+          content: ${{ steps.gha.outputs.value }}
           filepath: /current-repos.md
           mode: 0655
 
