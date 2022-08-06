@@ -34,6 +34,7 @@ jobs:
           find: ","
           replace: "\nBearsampp/"
 
+
       - name: Write to file
         uses: frdrwrt/write-to-file@v1.3
         with:
@@ -43,4 +44,4 @@ jobs:
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
         with:
-          files: current-repos.md
+          files: current-repos2.md
