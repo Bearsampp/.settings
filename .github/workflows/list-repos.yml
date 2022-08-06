@@ -36,13 +36,13 @@ jobs:
 
 
       - name: Write to file
-        uses: frdrwrt/write-to-file@v1.3
+        uses: DamianReeves/write-file-action@master
         with:
-          content: ${{ steps.gha.outputs.value }}
-          filepath: /current-repos2.md
-          mode: 0655
+          contents: ${{ steps.gha.outputs.value }}
+          path: ${{ env.home}}/current-repos.md
+          write-mode: overwrite
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
         with:
-          files: current-repos2.md
+          files: current-repos.md
