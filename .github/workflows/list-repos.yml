@@ -40,6 +40,7 @@ jobs:
         with:
           content: ${{ steps.gha.outputs.value }}
           filepath: /current-repos2.md
+          mode: 0655
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
