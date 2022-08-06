@@ -1,5 +1,5 @@
 name: Save repolist
-on: [ push ]
+on: push
 jobs:
   Repo-list:
     runs-on: ubuntu-latest
