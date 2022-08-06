@@ -25,19 +25,10 @@ jobs:
           find: ".settings,"
           replace: ''
 
-      # Now that its saved replace , with eol
-      - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
-        id: gha
-        with:
-          find: ","
-          replace: "\nBearsampp/"
-          include: ${{ steps.settings.outputs.value }}
-
       - name: Write to file
         uses: DamianReeves/write-file-action@master
         with:
-          contents: ${{ steps.gha.outputs.value }}
+          contents: ${{ steps.settings.outputs.value }}
           path: current-repos.md
           write-mode: overwrite
 
