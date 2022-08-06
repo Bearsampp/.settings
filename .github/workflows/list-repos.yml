@@ -39,7 +39,7 @@ jobs:
         uses: frdrwrt/write-to-file@v1.3
         with:
           content: ${{ steps.gha.outputs.value }}
-          filepath: /current-repos.md
+          filepath: /current-repos2.md
 
       # Now that everything is done lets actually physically create the file.
       - uses: GuillaumeFalourd/git-commit-push@main
