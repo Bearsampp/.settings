@@ -10,3 +10,5 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           query: "Octocat in:readme"
           max: 50
+          start: REPO_LIST
+          end: REPO_LIST
