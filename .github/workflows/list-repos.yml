@@ -39,7 +39,7 @@ jobs:
         uses: DamianReeves/write-file-action@master
         with:
           contents: ${{ steps.gha.outputs.value }}
-          path: /current-repos.md
+          path: current-repos.md
           write-mode: overwrite
 
       # Now that everything is done lets actually physically create the file.
