@@ -1,3 +1,5 @@
+![](img/artwork/Bearsamp-logo-128x128.svg)
+
 # .settings
 
 These are the settings that should be included in every repo & editor.
@@ -5,15 +7,13 @@ This is eqv to https://docs.joomla.org/Joomla_CodeSniffer
 
 ** How to clone all repos in the organization at once.
 
-1. first download and install [Git-cli](https://cli.github.com/)
-2. install _**"Git-cli"**_
-3. reboot
-4. open console where you want the repo's to be.  For me, it was **_"E:\Development\MY_PROJECTS\bearsampp-development"_**
-5. type `gh extension install matt-bartel/gh-clone-org`
-6. after that's installed type `gh clone-org -y Bearsampp`
+- first download and install [Git-cli](https://cli.github.com/)
+- reboot
+- open console where you want the repo's to be.  For me, it was **_"E:\Development\MY_PROJECTS\bearsampp-development"_**
+- type `gh extension install matt-bartel/gh-clone-org`
+- after that's installed type `gh clone-org -y Bearsampp`
 
-Thats all there is too it.  [Full instructions here](https://github.com/matt-bartel/gh-clone-org)
-
+That's all there is too it.  [Full instructions here](https://github.com/matt-bartel/gh-clone-org)
 
 Contains an action, list-repos.yml, that will automatically create a list of ALL repo's and put it into "current-repos.md".
-It specifically removes the 'website', '.settings' & 'bearsampp.com' repo as those are static and will always be preset.
+It specifically removes the '.settings' & 'bearsampp.com' repo as those are static and will always be preset.
