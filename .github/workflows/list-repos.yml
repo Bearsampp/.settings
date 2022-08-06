@@ -26,8 +26,8 @@ jobs:
           replace: ''
 
       # Now we need to save the file again because jacobtomlinson/gha-find-replace@v2 won't work properly otherwise.
-      - name: To File - mad9000
-        uses: GuillaumeFalourd/command-output-file-action@v2
+      - name: Assert Command Line Output
+        uses: GuillaumeFalourd/assert-command-line-output@v2
         with:
           command_line: echo ${{steps.website.outputs.value}}
           output_file_name: current-repos.md
