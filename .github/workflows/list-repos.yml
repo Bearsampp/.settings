@@ -32,6 +32,15 @@ jobs:
           path: current-repos.md
           write-mode: overwrite
 
+      # Now that its saved replace put Bearsampp in front of aetray
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@v2
+        id: gha
+        with:
+          find: "aetraymenu"
+          replace: ",aetraymenu"
+          include: current-repos.md
+
       # Now that its saved replace , with eol
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@v2
