@@ -85,3 +85,7 @@
   name: ":technologist: Website"
   color: "FFFFFF"
   description: "Our website"
+- # Security
+  name: ":closed_lock_with_key: Security"
+  color: "CD5C5C"
+  description: "Security issue"
