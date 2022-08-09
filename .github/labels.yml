@@ -75,3 +75,7 @@
   name: ":coffin: wontfix"
   color: "ffffff"
   description: ""
+- # Blocker
+  name: ":triangular_flag_on_post: Blocker"
+  color: "ff0000"
+  description: "Urgent bug blocking release"
