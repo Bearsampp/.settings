@@ -17,9 +17,10 @@
   color: "0366d6"
   description: ""
 - # documentation
-  name: ":memo: documentation"
+  name: ":books: documentation"
   color: "c5def5"
   description: ""
+  from_name: "documentation"
 - # duplicate
   name: ":busts_in_silhouette: duplicate"
   color: "cccccc"
@@ -80,3 +81,7 @@
   name: ":triangular_flag_on_post: Blocker"
   color: "ff0000"
   description: "Urgent bug blocking release"
+- # Website
+  name: ":link: Website"
+  color: "FFFFFF"
+  description: "Our website"
