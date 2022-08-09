@@ -7,6 +7,7 @@
   name: ":bug: bug"
   color: "b60205"
   description: ""
+  from_name: "bug"
 - # Urgent
   name: ":triangular_flag_on_post: Blocker"
   color: "FFFFFF"
