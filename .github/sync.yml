@@ -13,13 +13,14 @@ group:
         dest: img/binary.png
       - source: img/artwork/application.png
         dest: img/application.png
-        deleteOrphaned: true
       - source: LICENSE
         dest: LICENSE
       - source: .gitignore
         dest: .gitignore
       - source: .editorconfig
         dest: .editorconfig
+      - source: .gitattributes
+        dest: .gitattributes
     repos: |
         Bearsampp/Bearsampp
 
@@ -37,6 +38,8 @@ group:
         dest: .github/CODEOWNERS
       - source: .git-sync/modules/.github/FUNDING.yml
         dest: .github/FUNDING.yml
+      - source: .gitattributes
+        dest: .gitattributes
     repos: |
         Bearsampp/dev
         Bearsampp/login-servers-enhanced
