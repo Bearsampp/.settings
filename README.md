@@ -1,4 +1,4 @@
-![](img/artwork/Bearsamp-logo-128x128.svg)
+<p align="center"><a href="https://bearsampp.com/contribute" target="_blank"><img width="400" src="img/Bearsampp-logo.svg"></a></p>
 
 # .settings
 

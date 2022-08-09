@@ -24,6 +24,18 @@ group:
     repos: |
         Bearsampp/Bearsampp
 
+  # Prerequisites unique things
+  - files:
+      - source: img/artwork/Bearsampp-logo-128x128.ico
+        dest:  setup/bearsampp.ico
+      - source: img/artwork/Bearsampp.bmp
+        dest: setup/bearsampp.bmp
+      - source: img/artwork/prerequisites.bmp
+        dest: setup/prerequisites.bmp
+    repos: |
+      Bearsampp/prerequisites
+
+  # All COMMON items go here
   - files:
       - source: img/artwork/Bearsampp-with-text-stroked.svg
         dest: img/Bearsampp-logo.svg
