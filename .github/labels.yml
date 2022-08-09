@@ -82,6 +82,6 @@
   color: "ff0000"
   description: "Urgent bug blocking release"
 - # Website
-  name: ":link: Website"
+  name: ":technologist: Website"
   color: "FFFFFF"
   description: "Our website"
