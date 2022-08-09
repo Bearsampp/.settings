@@ -35,6 +35,16 @@ group:
     repos: |
       Bearsampp/prerequisites
 
+  # labels syncing
+  - files:
+      - source: .github/workflows/create-labels.yml
+        dest: .github/workflows/create-labels.yml
+      - source: .github/labels.yml
+        dest: .github/labels.yml
+    repos: |
+      Bearsampp/.teams
+
+
   # All COMMON items go here
   - files:
       - source: img/artwork/Bearsampp-with-text-stroked.svg
