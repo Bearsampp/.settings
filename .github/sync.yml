@@ -69,6 +69,7 @@ group:
     repos: |
         Bearsampp/dev
         Bearsampp/login-servers-enhanced
+        Bearsampp/aetraymenu
         Bearsampp/module-adminer
         Bearsampp/module-apache
         Bearsampp/module-composer
