@@ -84,6 +84,7 @@ group:
         Bearsampp/module-ngrok
         Bearsampp/module-nodejs
         Bearsampp/module-perl
+        Bearsampp/module-php
         Bearsampp/module-phpmemadmin
         Bearsampp/module-phpmyadmin
         Bearsampp/module-phppgadmin
