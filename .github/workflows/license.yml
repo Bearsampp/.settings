@@ -1,19 +1,16 @@
-name: Add License
-
+name: Replace license
 on: workflow_dispatch
 
+  workflow_dispatch:
 jobs:
-  build:
+  sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Setup Node.js
-        uses: actions/setup-node@v1
+      - name: Checkout Repository
+        uses: actions/checkout@v3.0.2
+      - name: Run GitHub File Sync
+        uses: BetaHuhn/repo-file-sync-action@latest
         with:
-          node-version: 12.x
-      - name: Adding License
-        uses: dephraiim/license-action@v1
-        with:
-          LICENSE_TYPE: GPL
-          AUTHOR: N6REJ
-          PROJECT_NAME: Bearsampp
+          GH_PAT: ${{ secrets.GH_PAT }}
+          SKIP_PR: true
+
