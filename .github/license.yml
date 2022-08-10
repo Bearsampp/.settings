@@ -5,7 +5,6 @@ group:
       - source: LICENSE
         dest: old-license
         deleteOrphaned: true
-
     repos: |
         Bearsampp/Bearsampp
         Bearsampp/dev
