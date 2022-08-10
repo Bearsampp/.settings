@@ -4,7 +4,7 @@ group:
   - files:
       - source: LICENSE
         dest: old-license
-        deleteOrphaned: true
+
     repos: |
         Bearsampp/Bearsampp
         Bearsampp/dev
@@ -28,6 +28,7 @@ group:
         Bearsampp/module-phpmyadmin
         Bearsampp/module-phppgadmin
         Bearsampp/module-postgresql
+        Bearsampp/module-php
         Bearsampp/module-python
         Bearsampp/module-ruby
         Bearsampp/module-svn
