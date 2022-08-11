@@ -33,6 +33,12 @@ group:
         dest: .github/workflows/create-labels.yml
       - source: .github/labels.yml
         dest: .github/labels.yml
+      - source: .github/auto-merge.yml
+        dest: .github/auto-merge.yml
+      - source: .github/workflows/auto-merge.yml
+        dest: .github/workflows/auto-merge.yml
+      - source: .github/dependabot.yml
+        dest: .github/dependabot.yml
     repos: |
         Bearsampp/Bearsampp
 
@@ -46,15 +52,6 @@ group:
         dest: setup/prerequisites.bmp
     repos: |
       Bearsampp/prerequisites
-
-  # labels syncing
-  - files:
-      - source: .github/workflows/create-labels.yml
-        dest: .github/workflows/create-labels.yml
-      - source: .github/labels.yml
-        dest: .github/labels.yml
-    repos: |
-      Bearsampp/.teams
 
 
   # All COMMON items go here
