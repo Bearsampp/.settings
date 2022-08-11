@@ -59,6 +59,16 @@ group:
 
   # All COMMON items go here
   - files:
+      - source: .github/auto-merge.yml
+        dest: .github/auto-merge.yml
+      - source: .github/workflows/auto-merge.yml
+        dest: .github/workflows/auto-merge.yml
+      - source: .github/workflows/create-labels.yml
+        dest: .github/workflows/create-labels.yml
+      - source: .github/labels.yml
+        dest: .github/labels.yml
+      - source: .github/dependabot.yml
+        dest: .github/dependabot.yml
       - source: img/artwork/Bearsampp-with-text-stroked.svg
         dest: img/Bearsampp-logo.svg
         deleteOrphaned: true
