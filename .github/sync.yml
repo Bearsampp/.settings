@@ -13,6 +13,12 @@ group:
         dest: img/binary.png
       - source: img/artwork/application.png
         dest: img/application.png
+      - source: img/artwork/Bearsampp.bmp
+        dest: core/resources/Bearsampp.bmp
+      - source: img/artwork/Bearsampp.ico
+        dest: core/resources/Bearsampp.ico
+      - source: img/artwork/about.bmp
+        dest: core/resources/about.bmp
       - source: LICENSE
         dest: LICENSE
       - source: .gitignore
@@ -31,9 +37,9 @@ group:
   # Prerequisites unique things
   - files:
       - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest:  setup/bearsampp.ico
+        dest:  setup/Bearsampp.ico
       - source: img/artwork/Bearsampp.bmp
-        dest: setup/bearsampp.bmp
+        dest: setup/Bearsampp.bmp
       - source: img/artwork/prerequisites.bmp
         dest: setup/prerequisites.bmp
     repos: |
