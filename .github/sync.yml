@@ -17,6 +17,8 @@ group:
         dest: core/resources/Bearsampp.bmp
       - source: img/artwork/Bearsampp-logo-128x128.ico
         dest: core/resources/Bearsampp.ico
+      - source: img/artwork/Bearsampp-logo-128x128.ico
+        dest: core/resources/icons/app.ico
       - source: img/artwork/about.bmp
         dest: core/resources/about.bmp
       - source: LICENSE
