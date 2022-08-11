@@ -1,6 +1,6 @@
 group:
 
-  # Add modules since they share common needs
+  # Bearsampp repo unique things
   - files:
       - source: .git-sync/modules/.github
         dest: .github
