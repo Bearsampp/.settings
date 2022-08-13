@@ -33,7 +33,7 @@ group:
 
   # All COMMON items go here
   - files:
-      - source: .github
+      - source: .common
         dest: .github
         deleteOrphaned: true # Removes deleted files
       - source: img/artwork/Bearsampp-with-text-stroked.svg
