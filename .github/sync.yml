@@ -5,8 +5,6 @@ group:
       - source: .git-sync/modules/.github
         dest: .github
         deleteOrphaned: true # Removes deleted files
-      - source: img/artwork/Bearsampp-with-text-stroked.svg
-        dest: img/Bearsampp-logo.svg
       - source: img/artwork/tool.png
         dest: img/tool.png
       - source: img/artwork/binary.png
@@ -21,24 +19,6 @@ group:
         dest: core/resources/icons/app.ico
       - source: img/artwork/about.bmp
         dest: core/resources/about.bmp
-      - source: LICENSE
-        dest: LICENSE
-      - source: .gitignore
-        dest: .gitignore
-      - source: .editorconfig
-        dest: .editorconfig
-      - source: .gitattributes
-        dest: .gitattributes
-      - source: .github/workflows/create-labels.yml
-        dest: .github/workflows/create-labels.yml
-      - source: .github/labels.yml
-        dest: .github/labels.yml
-      - source: .github/auto-merge.yml
-        dest: .github/auto-merge.yml
-      - source: .github/workflows/auto-merge.yml
-        dest: .github/workflows/auto-merge.yml
-      - source: .github/dependabot.yml
-        dest: .github/dependabot.yml
     repos: |
         Bearsampp/Bearsampp
 
@@ -56,16 +36,9 @@ group:
 
   # All COMMON items go here
   - files:
-      - source: .github/auto-merge.yml
-        dest: .github/auto-merge.yml
-      - source: .github/workflows/auto-merge.yml
-        dest: .github/workflows/auto-merge.yml
-      - source: .github/workflows/create-labels.yml
-        dest: .github/workflows/create-labels.yml
-      - source: .github/labels.yml
-        dest: .github/labels.yml
-      - source: .github/dependabot.yml
-        dest: .github/dependabot.yml
+      - source: .github
+        dest: .github
+        deleteOrphaned: true # Removes deleted files
       - source: img/artwork/Bearsampp-with-text-stroked.svg
         dest: img/Bearsampp-logo.svg
         deleteOrphaned: true
@@ -75,13 +48,10 @@ group:
         dest: .gitignore
       - source: .editorconfig
         dest: .editorconfig
-      - source: .git-sync/modules/.github/CODEOWNERS
-        dest: .github/CODEOWNERS
-      - source: .git-sync/modules/.github/FUNDING.yml
-        dest: .github/FUNDING.yml
       - source: .gitattributes
         dest: .gitattributes
     repos: |
+        Bearsampp/Bearsampp
         Bearsampp/dev
         Bearsampp/login-servers-enhanced
         Bearsampp/aetraymenu
