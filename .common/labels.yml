@@ -83,3 +83,8 @@
   name: ":runner: RTC"
   color: "87ceeb"
   description: "Ready to commit"
+- # Sync
+  name: ":arrow_forward: Sync"
+  color: "87ceeb"
+  description: "Sync Action"
+  from_name: "sync"
