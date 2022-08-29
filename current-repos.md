@@ -25,9 +25,7 @@ Bearsampp/module-phppgadmin
 Bearsampp/module-postgresql
 Bearsampp/module-python
 Bearsampp/module-ruby
-Bearsampp/module-svn
 Bearsampp/module-webgrind
-Bearsampp/module-websvn
 Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
