@@ -8,23 +8,25 @@ group:
         dest: img/binary.png
       - source: img/artwork/application.png
         dest: img/application.png
-      - source: img/artwork/Bearsampp.bmp
-        dest: core/resources/Bearsampp.bmp
+      - source: img/artwork/bearsampp.bmp
+        dest: core/resources/bearsampp.bmp
       - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest: core/resources/Bearsampp.ico
+        dest: core/resources/bearsampp.ico
       - source: img/artwork/Bearsampp-logo-128x128.ico
         dest: core/resources/icons/app.ico
       - source: img/artwork/about.bmp
         dest: core/resources/about.bmp
+      - source: .github/workflows/changelog.yml
+        dest: .github/workflows/changelog.yml
     repos: |
         Bearsampp/Bearsampp
 
   # Prerequisites unique things
   - files:
       - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest:  setup/Bearsampp.ico
-      - source: img/artwork/Bearsampp.bmp
-        dest: setup/Bearsampp.bmp
+        dest:  setup/bearsampp.ico
+      - source: img/artwork/bearsampp.bmp
+        dest: setup/bearsampp.bmp
       - source: img/artwork/prerequisites.bmp
         dest: setup/prerequisites.bmp
     repos: |
