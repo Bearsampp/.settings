@@ -18,6 +18,7 @@ Bearsampp/module-mysql
 Bearsampp/module-ngrok
 Bearsampp/module-nodejs
 Bearsampp/module-perl
+Bearsampp/module-pgadmin
 Bearsampp/module-php
 Bearsampp/module-phpmemadmin
 Bearsampp/module-phpmyadmin
