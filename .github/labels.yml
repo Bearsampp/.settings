@@ -1,7 +1,7 @@
 ## more info https://github.com/crazy-max/ghaction-github-labeler
 - # bot
-  name: "bot :robot: "
-  color: "69cde9"
+  name: "bot :robot:"
+  color: "69cd00"
   description: "Used by bots"
 - # bug
   name: "bug :bug:"
@@ -13,7 +13,7 @@
   color: "FFFFFF"
   description: "Release blocker"
 - # dependencies
-  name: "dependencies :game_die:"
+  name: "dependencies :man_cook:"
   color: "0366d6"
   description: "Dependencies need fixed"
 - # documentation
@@ -83,3 +83,9 @@
   color: "87ceeb"
   description: "Sync Action"
   from_name: "sync"
+- # Won't fix
+  name: "Wont_fix_it :man_mechanic:"
+  color: "b45f06"
+  description: "Won't fix"
+  from_name: "wontfix"
+
