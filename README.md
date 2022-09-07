@@ -1,4 +1,4 @@
-<p align="center"><a href="https://bearsampp.com/contribute" target="_blank"><img width="300" src="img/artwork/Bearsampp-with-text-stroked.svg"></a></p>
+<p align="center"><a href="https://bearsampp.com/contribute" target="_blank"><img width="250" src="img/artwork/Bearsampp-with-text-stroked.svg"></a></p>
 
 # .settings
 
