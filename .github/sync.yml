@@ -29,6 +29,8 @@ group:
         dest: setup/bearsampp.bmp
       - source: img/artwork/prerequisites.bmp
         dest: setup/prerequisites.bmp
+      - source: .gitignore
+        dest: .gitignore
     repos: |
       Bearsampp/prerequisites
 
@@ -43,7 +45,7 @@ group:
         deleteOrphaned: true
       - source: LICENSE
         dest: LICENSE
-      - source: .gitignore
+      - source: .gitignore.common
         dest: .gitignore
       - source: .editorconfig
         dest: .editorconfig
