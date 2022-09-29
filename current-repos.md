@@ -6,6 +6,7 @@ Bearsampp/login-servers-enhanced
 Bearsampp/module-adminer
 Bearsampp/module-apache
 Bearsampp/module-composer
+Bearsampp/module-conemu
 Bearsampp/module-consolez
 Bearsampp/module-filezilla
 Bearsampp/module-ghostscript
