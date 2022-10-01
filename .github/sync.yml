@@ -18,6 +18,8 @@ group:
         dest: core/resources/about.bmp
       - source: .github/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
+      - source: .gitignore
+        dest: .gitignore
     repos: |
         Bearsampp/Bearsampp
 
