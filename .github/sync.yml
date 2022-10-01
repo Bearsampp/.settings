@@ -65,7 +65,6 @@ group:
         Bearsampp/module-filezilla
         Bearsampp/module-ghostscript
         Bearsampp/module-git
-        Bearsampp/module-gitlist
         Bearsampp/module-mailhog
         Bearsampp/module-mariadb
         Bearsampp/module-memcached
@@ -74,7 +73,6 @@ group:
         Bearsampp/module-nodejs
         Bearsampp/module-perl
         Bearsampp/module-php
-        Bearsampp/module-phpmemadmin
         Bearsampp/module-phpmyadmin
         Bearsampp/module-phppgadmin
         Bearsampp/module-postgresql
@@ -87,3 +85,4 @@ group:
         Bearsampp/prerequisites
         Bearsampp/.teams
         Bearsampp/module-pgadmin
+        Bearsampp/module-mailpit
