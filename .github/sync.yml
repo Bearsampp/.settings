@@ -86,3 +86,4 @@ group:
         Bearsampp/.teams
         Bearsampp/module-pgadmin
         Bearsampp/module-mailpit
+        Bearsampp/module-mongodb
