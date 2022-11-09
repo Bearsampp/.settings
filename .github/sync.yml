@@ -18,6 +18,22 @@ group:
         dest: core/resources/about.bmp
       - source: .github/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
+      - source: .gitignore
+        dest: .gitignore
+      - source: .editorconfig
+        dest: .editorconfig
+      - source: .gitattributes
+        dest: .gitattributes
+      - source: img/artwork/favicon.ico
+        dest: favicon.ico
+      - source: .common
+        dest: .github
+        deleteOrphaned: true # Removes deleted files
+      - source: img/artwork/Bearsampp-with-text-stroked.svg
+        dest: img/Bearsampp-logo.svg
+        deleteOrphaned: true
+      - source: LICENSE
+        dest: LICENSE        
     repos: |
         Bearsampp/Bearsampp
 
@@ -54,7 +70,6 @@ group:
       - source: img/artwork/favicon.ico
         dest: favicon.ico
     repos: |
-        Bearsampp/Bearsampp
         Bearsampp/dev
         Bearsampp/login-servers-enhanced
         Bearsampp/aetraymenu
