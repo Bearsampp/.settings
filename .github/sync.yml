@@ -33,7 +33,7 @@ group:
         dest: img/Bearsampp-logo.svg
         deleteOrphaned: true
       - source: LICENSE
-        dest: LICENSE        
+        dest: LICENSE
     repos: |
         Bearsampp/Bearsampp
 
@@ -100,5 +100,3 @@ group:
         Bearsampp/prerequisites
         Bearsampp/.teams
         Bearsampp/module-pgadmin
-        Bearsampp/module-mailpit
-        Bearsampp/module-mongodb
