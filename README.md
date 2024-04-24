@@ -17,3 +17,5 @@ That's all there is too it.  [Full instructions here](https://github.com/matt-ba
 
 Contains an action, list-repos.yml, that will automatically create a list of ALL repo's and put it into "current-repos.md".
 It specifically removes the '.settings' & 'bearsampp.com' repo as those are static and will always be preset.
+
+The emojis we use for labels can be found at https://gist.github.com/rxaviers/7360908
