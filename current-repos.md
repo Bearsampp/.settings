@@ -1,6 +1,8 @@
-
+.teams
+Bearsampp/
 Bearsampp/aetraymenu
 Bearsampp/Bearsampp
+Bearsampp/Bearsampp-Accordion
 Bearsampp/dev
 Bearsampp/login-servers-enhanced
 Bearsampp/module-adminer
@@ -19,7 +21,6 @@ Bearsampp/module-mysql
 Bearsampp/module-ngrok
 Bearsampp/module-nodejs
 Bearsampp/module-perl
-Bearsampp/module-pgadmin
 Bearsampp/module-php
 Bearsampp/module-phpmemadmin
 Bearsampp/module-phpmyadmin
@@ -31,4 +32,5 @@ Bearsampp/module-webgrind
 Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
+Bearsampp/php_5.6-winbinder.dll
 Bearsampp/prerequisites
