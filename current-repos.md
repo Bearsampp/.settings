@@ -32,5 +32,5 @@ Bearsampp/module-webgrind
 Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
-Bearsampp/php_5.6-winbinder.dll
+Bearsampp/php_5.6-core
 Bearsampp/prerequisites
