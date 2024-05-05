@@ -34,3 +34,4 @@ Bearsampp/module-yarn
 Bearsampp/modules-untouched
 Bearsampp/php_5.6-core
 Bearsampp/prerequisites
+Bearsampp/sandbox
