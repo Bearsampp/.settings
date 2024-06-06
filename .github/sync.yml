@@ -25,7 +25,7 @@ group:
       - source: .gitattributes
         dest: .gitattributes
       - source: img/artwork/favicon.ico
-        dest: /core/homepage/resources/img/icons/favicon.ico
+        dest: core/homepage/resources/img/icons/favicon.ico
       - source: .common
         dest: .github
         deleteOrphaned: true # Removes deleted files
