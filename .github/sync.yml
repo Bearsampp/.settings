@@ -95,8 +95,8 @@ group:
         Bearsampp/module-ruby
         Bearsampp/module-webgrind
         Bearsampp/module-xdc
+        Bearsampp/module-xlight
         Bearsampp/module-yarn
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
         Bearsampp/.teams
-        Bearsampp/module-xlight
