@@ -33,5 +33,6 @@ Bearsampp/module-xdc
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
 Bearsampp/php_5.6-core
+Bearsampp/pr-agent-settings
 Bearsampp/prerequisites
 Bearsampp/sandbox
