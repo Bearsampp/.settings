@@ -9,13 +9,13 @@ group:
       - source: img/artwork/application.png
         dest: img/application.png
       - source: img/artwork/bearsampp.bmp
-        dest: core/resources/bearsampp.bmp
+        dest: core/resources/homepage/img/bearsampp.bmp
       - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest: core/resources/bearsampp.ico
+        dest: core/resources/homepage/img/icons/bearsampp.ico
       - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest: core/resources/icons/app.ico
+        dest: core/resources/homepage/img/icons/app.ico
       - source: img/artwork/about.bmp
-        dest: core/resources/about.bmp
+        dest: core/resources/homepage/img/about.bmp
       - source: .github/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
       - source: .gitignore
@@ -25,7 +25,7 @@ group:
       - source: .gitattributes
         dest: .gitattributes
       - source: img/artwork/favicon.ico
-        dest: favicon.ico
+        dest: /core/homepage/resources/img/icons/favicon.ico
       - source: .common
         dest: .github
         deleteOrphaned: true # Removes deleted files
@@ -99,3 +99,4 @@ group:
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
         Bearsampp/.teams
+        Bearsampp/module-xlight
