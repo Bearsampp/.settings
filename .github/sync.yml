@@ -81,6 +81,7 @@ group:
         Bearsampp/module-ghostscript
         Bearsampp/module-git
         Bearsampp/module-mailhog
+        Bearsampp/module-mailpit
         Bearsampp/module-mariadb
         Bearsampp/module-memcached
         Bearsampp/module-mysql
