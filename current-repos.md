@@ -2,7 +2,6 @@
 Bearsampp/
 Bearsampp/aetraymenu
 Bearsampp/Bearsampp
-Bearsampp/Bearsampp-Accordion
 Bearsampp/dev
 Bearsampp/login-servers-enhanced
 Bearsampp/module-adminer
@@ -30,6 +29,7 @@ Bearsampp/module-python
 Bearsampp/module-ruby
 Bearsampp/module-webgrind
 Bearsampp/module-xdc
+Bearsampp/module-xlight
 Bearsampp/module-yarn
 Bearsampp/modules-untouched
 Bearsampp/php_5.6-core
