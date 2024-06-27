@@ -14,11 +14,11 @@ jobs:
       # Create raw list of ALL repos in comma delimited format
       - name: Repo-List-Generator
         id: repo
-        uses: yi-Xu-0100/repo-list-generator@v1.0.1
+        uses: yi-Xu-0100/repo-list-generator@vlatest
 
       # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
       - name: Find-and-replace settings
-        uses: mad9000/actions-find-and-replace-string@2
+        uses: mad9000/actions-find-and-replace-string@latest
         id: settings
         with:
           source: ${{ steps.repo.outputs.repoList_PRIVATE }}
@@ -34,16 +34,25 @@ jobs:
 
       # Now that its saved replace put Bearsampp in front of aetray
       - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@latest
         id: gha
         with:
           find: "aetraymenu"
           replace: ",aetraymenu"
           include: current-repos.md
 
+      # Now put Bearsampp in front of .teams
+      - name: Find and Replace
+        uses: jacobtomlinson/gha-find-replace@latest
+        id: gha
+        with:
+          find: ".teams"
+          replace: "Bearsampp/,teams\n"
+          include: current-repos.md
+
       # Now that its saved replace , with eol
       - name: Find and Replace
-        uses: jacobtomlinson/gha-find-replace@v2
+        uses: jacobtomlinson/gha-find-replace@latest
         id: gha2
         with:
           find: ","
