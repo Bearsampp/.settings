@@ -44,7 +44,7 @@ jobs:
       # Now put Bearsampp in front of .teams
       - name: Find and Replace
         uses: jacobtomlinson/gha-find-replace@latest
-        id: gha
+        id: gha1
         with:
           find: ".teams"
           replace: "Bearsampp/,teams\n"
