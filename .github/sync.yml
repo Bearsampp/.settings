@@ -93,3 +93,33 @@ group:
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
         Bearsampp/.teams
+
+    # Things for modules ONLY!
+  - files:
+        - source: .dispatcher
+          dest: .github/workflows
+          deleteOrphaned: true # Removes deleted files
+    repos: |
+        Bearsampp/module-adminer
+        Bearsampp/module-apache
+        Bearsampp/module-composer
+        Bearsampp/module-consolez
+        Bearsampp/module-ghostscript
+        Bearsampp/module-git
+        Bearsampp/module-mailpit
+        Bearsampp/module-mariadb
+        Bearsampp/module-memcached
+        Bearsampp/module-mysql
+        Bearsampp/module-ngrok
+        Bearsampp/module-nodejs
+        Bearsampp/module-perl
+        Bearsampp/module-php
+        Bearsampp/module-phpmyadmin
+        Bearsampp/module-phppgadmin
+        Bearsampp/module-postgresql
+        Bearsampp/module-python
+        Bearsampp/module-ruby
+        Bearsampp/module-webgrind
+        Bearsampp/module-xdc
+        Bearsampp/module-xlight
+        Bearsampp/module-yarn
