@@ -1,4 +1,6 @@
-.teams
+Bearsampp/
+Bearsampp/teams
+
 Bearsampp/
 Bearsampp/aetraymenu
 Bearsampp/Bearsampp
@@ -6,14 +8,15 @@ Bearsampp/dev
 Bearsampp/login-servers-enhanced
 Bearsampp/module-adminer
 Bearsampp/module-apache
+Bearsampp/module-bruno
 Bearsampp/module-composer
-Bearsampp/module-conemu
 Bearsampp/module-consolez
 Bearsampp/module-filezilla
 Bearsampp/module-ghostscript
 Bearsampp/module-git
 Bearsampp/module-gitlist
 Bearsampp/module-mailhog
+Bearsampp/module-mailpit
 Bearsampp/module-mariadb
 Bearsampp/module-memcached
 Bearsampp/module-mysql
