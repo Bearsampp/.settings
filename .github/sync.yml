@@ -67,6 +67,7 @@ group:
         Bearsampp/aetraymenu
         Bearsampp/module-adminer
         Bearsampp/module-apache
+        Bearsampp/module-bruno
         Bearsampp/module-composer
         Bearsampp/module-consolez
         Bearsampp/module-ghostscript
@@ -100,6 +101,7 @@ group:
     repos: |
         Bearsampp/module-adminer
         Bearsampp/module-apache
+        Bearsampp/module-bruno
         Bearsampp/module-composer
         Bearsampp/module-consolez
         Bearsampp/module-ghostscript
