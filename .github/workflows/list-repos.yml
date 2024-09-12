@@ -14,7 +14,7 @@ jobs:
       # Create raw list of ALL repos in comma delimited format
       - name: Repo-List-Generator
         id: repo
-        uses: yi-Xu-0100/repo-list-generator@v1
+        uses: yi-Xu-0100/repo-list-generator@v1.1.1
 
       # Now that its saved we can use an action to replace .settings since we don't want that one in the list.
       - name: Find-and-replace settings
