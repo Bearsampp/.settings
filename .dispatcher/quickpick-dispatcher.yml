@@ -16,7 +16,7 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Invoke workflow in another repo with inputs
-              uses: benc-uk/workflow-dispatch@v1
+              uses: benc-uk/workflow-dispatch@v1.2.4
               with:
                   workflow: combine_releases.yml
                   repo: Bearsampp/Bearsampp
