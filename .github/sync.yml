@@ -85,10 +85,7 @@ group:
         Bearsampp/module-postgresql
         Bearsampp/module-python
         Bearsampp/module-ruby
-        Bearsampp/module-webgrind
-        Bearsampp/module-xdc
         Bearsampp/module-xlight
-        Bearsampp/module-yarn
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
         Bearsampp/.teams
@@ -119,7 +116,4 @@ group:
         Bearsampp/module-postgresql
         Bearsampp/module-python
         Bearsampp/module-ruby
-        Bearsampp/module-webgrind
-        Bearsampp/module-xdc
         Bearsampp/module-xlight
-        Bearsampp/module-yarn
