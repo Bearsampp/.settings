@@ -47,7 +47,7 @@ group:
   - files:
       - source: .common
         dest: .github
-      - source: .github/.phpstorm-metadata
+      - source: .github/.phpstorm-metadata/
         dest: .github
         deleteOrphaned: true # Removes deleted files
       - source: img/artwork/Bearsampp-with-text-stroked.svg
