@@ -47,8 +47,8 @@ group:
   - files:
       - source: .common
         dest: .github
-      - source: .github/.phpstorm-metadata/
-        dest: .github
+      - source: .github/.phpstorm-metadata/winbinder.php
+        dest: .github/.phpstorm-metadata/winbinder.php
         deleteOrphaned: true # Removes deleted files
       - source: img/artwork/Bearsampp-with-text-stroked.svg
         dest: img/Bearsampp-logo.svg
