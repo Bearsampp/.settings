@@ -17,9 +17,9 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Invoke workflow in another repo with inputs
-              uses: benc-uk/workflow-dispatch@v1.2.4
+              uses: peter-evans/repository-dispatch@v2
               with:
-                  workflow: combine_releases.yml
-                  repo: Bearsampp/Bearsampp
-                  # Required when using the `repo` option. Either a PAT or a token generated from the GitHub app or CLI
-                  token: "${{ secrets.GH_PAT }}"
+                  token: ${{ secrets.GH_PAT }}
+                  repository: Bearsampp/Bearsampp
+                  event-type: run-combine-releases
+                  client-payload: '{"workflow": "combine_releases.yml"}'
