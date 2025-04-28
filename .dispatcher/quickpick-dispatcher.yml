@@ -6,11 +6,19 @@ on:
             - closed
         branches:
             - 'main'
+    release:
+        types:
+            - created
+            - edited
+            - prereleased
     workflow_dispatch:
 
 jobs:
-    if_merged:
-        if: github.event_name == 'workflow_dispatch' || github.event.pull_request.merged == true
+    dispatch_workflow:
+        if: |
+            (github.event_name == 'workflow_dispatch') || 
+            (github.event_name == 'pull_request' && github.event.pull_request.merged == true) || 
+            (github.event_name == 'release' && (github.event.action == 'created' || github.event.action == 'edited' || github.event.action == 'prereleased'))
         runs-on: ubuntu-latest
         steps:
             - name: Checkout
