@@ -2,12 +2,6 @@ group:
 
   # Bearsampp repo unique things
   - files:
-      - source: img/artwork/bearsampp.bmp
-        dest: core/resources/homepage/img/bearsampp.bmp
-      - source: img/artwork/Bearsampp-logo-128x128.ico
-        dest: core/resources/homepage/img/icons/app.ico
-      - source: img/artwork/about.bmp
-        dest: core/resources/homepage/img/about.bmp
       - source: .github/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
       - source: .gitignore
