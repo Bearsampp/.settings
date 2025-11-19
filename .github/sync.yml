@@ -12,7 +12,6 @@ group:
         dest: core/homepage/resources/img/icons/favicon.ico
       - source: .common
         dest: .github
-        deleteOrphaned: true # Removes deleted files
       - source: img/artwork/Bearsampp-with-text-stroked.svg
         dest: img/Bearsampp-logo.svg
         deleteOrphaned: true
@@ -59,7 +58,6 @@ group:
         Bearsampp/dev
         Bearsampp/login-servers-enhanced
         Bearsampp/aetraymenu
-        Bearsampp/module-adminer
         Bearsampp/module-apache
         Bearsampp/module-bruno
         Bearsampp/module-composer
@@ -85,7 +83,7 @@ group:
         Bearsampp/.teams
 
 
-  # All COMMON items go here
+  # All SANDBOX items go here
   - files:
       - source: .common
         dest: .github
@@ -106,13 +104,16 @@ group:
     repos: |
         Bearsampp/sandbox
 
-    # Things for modules ONLY!
+  # Things for modules ONLY!
   - files:
         - source: .dispatcher
           dest: .github/workflows
           deleteOrphaned: true # Removes deleted files
+        - source: .releases/update-releases-properties.yml
+          dest: .github/workflows
+        - source: .releases/validate-properties-links.yml
+          dest: .github/workflows
     repos: |
-        Bearsampp/module-adminer
         Bearsampp/module-apache
         Bearsampp/module-bruno
         Bearsampp/module-composer
@@ -133,3 +134,12 @@ group:
         Bearsampp/module-python
         Bearsampp/module-ruby
         Bearsampp/module-xlight
+
+  # Things for modules-untouched ONLY!
+  - files:
+        - source: .releases/update-module-properties.yml
+          dest: .github/workflows
+        - source: .releases/validate-properties-links.yml
+          dest: .github/workflows
+    repos: |
+        Bearsampp/modules-untouched
