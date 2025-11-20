@@ -38,7 +38,22 @@ jobs:
         run: |
           # Extract module name from repo name (e.g., "module-php" -> "php")
           REPO_NAME="${{ github.event.repository.name }}"
-          MODULE_NAME="${REPO_NAME#module-}"
+          echo "Repository name: ${REPO_NAME}"
+          
+          # Remove "module-" prefix (case-insensitive)
+          if [[ "${REPO_NAME}" == module-* ]]; then
+            MODULE_NAME="${REPO_NAME#module-}"
+          elif [[ "${REPO_NAME}" == Module-* ]]; then
+            MODULE_NAME="${REPO_NAME#Module-}"
+          else
+            echo "ERROR: Repository name does not start with 'module-'"
+            echo "Expected format: module-MODULENAME (e.g., module-php)"
+            exit 1
+          fi
+          
+          # Convert to lowercase
+          MODULE_NAME=$(echo "${MODULE_NAME}" | tr '[:upper:]' '[:lower:]')
+          
           echo "module_name=${MODULE_NAME}" >> $GITHUB_OUTPUT
           echo "Module name: ${MODULE_NAME}"
       
@@ -178,6 +193,7 @@ jobs:
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.GH_PAT }}
+          base: main
           commit-message: |
             Update releases.properties
             
