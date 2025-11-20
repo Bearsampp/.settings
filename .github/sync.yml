@@ -110,9 +110,9 @@ group:
           dest: .github/workflows
           deleteOrphaned: true # Removes deleted files
         - source: .releases/update-releases-properties.yml
-          dest: .github/workflows
+          dest: .github/workflows/update-releases-properties.yml
         - source: .releases/validate-properties-links.yml
-          dest: .github/workflows
+          dest: .github/workflows/validate-properties-links.yml
     repos: |
         Bearsampp/module-apache
         Bearsampp/module-bruno
@@ -138,8 +138,8 @@ group:
   # Things for modules-untouched ONLY!
   - files:
         - source: .releases/update-module-properties.yml
-          dest: .github/workflows
+          dest: .github/workflows/update-module-properties.yml
         - source: .releases/validate-properties-links.yml
-          dest: .github/workflows
+          dest: .github/workflows/validate-properties-links.yml
     repos: |
         Bearsampp/modules-untouched
