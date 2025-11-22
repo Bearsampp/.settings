@@ -18,7 +18,12 @@ The system consists of three workflows:
 
 **Release Tag Format:** `MODULENAME-YYYY.MM.DD` (e.g., `php-2025.10.31`)
 
-**File Selection:** Only files starting with the module name and ending with `.7z` or `.zip`
+**File Selection:** Files starting with the module name and ending with `.7z`, `.exe`, or `.zip`
+
+**Version Extraction:** 
+- First tries to extract version from filename (supports 2+ part versions: `X.Y`, `X.Y.Z`, `X.Y.Z.W`, etc.)
+- Falls back to release name if version not found in filename
+- Special handling for `composer` (.phar files) and `xlight` (version from release name only)
 
 **Example:** 
 - Release: `php-2025.10.31`
@@ -224,11 +229,16 @@ You can manually trigger workflows from the GitHub Actions tab:
 ### update-module-properties.yml (modules-untouched)
 
 1. **Extracts module name** from release tag (e.g., `php-2025.10.31` → `php`)
-2. **Finds matching files** that start with module name and end with `.7z` or `.zip`
-3. **Parses version numbers** from filenames
+2. **Finds matching files** that start with module name and end with `.7z`, `.exe`, or `.zip`
+3. **Parses version numbers** from filenames (or release name as fallback)
 4. **Updates** `modules/{module}.properties` file
 5. **Sorts** entries by semantic version (newest first)
 6. **Creates PR** with auto-merge enabled
+
+**Special Module Handling:**
+- **composer**: Accepts `.phar` files, extracts version from filename or release name
+- **xlight**: Looks for `xlight-x64.zip`, always uses version from release name (e.g., "Xlight 3.9.4.6")
+- **All others**: Standard processing with filename → release name fallback
 
 ### update-releases-properties.yml (module repos)
 
@@ -271,11 +281,38 @@ You can manually trigger workflows from the GitHub Actions tab:
 
 ### Version Not Extracted
 
-**Issue:** "Could not extract version from filename"
+**Issue:** "Could not extract version from filename or release name"
 
-**Solution:** Ensure filenames contain a version number in format `X.Y.Z` or `X.Y.Z.W`
-- ✅ Correct: `php-8.3.14-Win32.zip`, `apache-2.4.62.zip`
-- ❌ Wrong: `php-latest.zip`, `apache.zip`
+**Solution:** The workflow tries two methods to extract version:
+
+1. **From filename** - Supports flexible version formats:
+   - ✅ 2-part: `postgresql-13.23-...zip` → `13.23`
+   - ✅ 3-part: `php-8.3.14-...zip` → `8.3.14`
+   - ✅ 4-part: `xlight-3.9.4.6.zip` → `3.9.4.6`
+   - ✅ 5+ parts: Any number of dot-separated numbers
+   - ❌ Wrong: `php-latest.zip`, `apache.zip` (no version)
+
+2. **From release name** (fallback) - If filename doesn't contain version:
+   - Set release name to include version (e.g., "PHP 8.3.14", "PostgreSQL 13.23")
+   - Workflow will extract and use this version
+
+**Detailed Error Output:**
+When version extraction fails, the workflow provides detailed debug information including:
+- Module name and release tag
+- Filename and URL of the problematic asset
+- Regex pattern used for matching
+- All available assets in the release
+
+### Pre-Release to Release Conversion
+
+**Issue:** Workflow doesn't trigger when changing a pre-release to a full release
+
+**Solution:** The workflow now triggers on three events:
+- `published` - When a new release is published
+- `released` - When a pre-release is converted to a full release
+- `edited` - When a release is edited
+
+If the workflow still doesn't trigger, manually run it from the Actions tab.
 
 ### Link Validation Failing
 
