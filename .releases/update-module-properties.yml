@@ -123,12 +123,12 @@ jobs:
                       })
                       print(f"Found: {filename} -> Version: {ver}")
               elif filename.lower().startswith(module_name):
-                  # Standard modules use .7z or .zip and must start with module name (case-insensitive)
-                  if filename.endswith('.7z') or filename.endswith('.zip'):
+                  # Standard modules use .7z, .exe, or .zip and must start with module name (case-insensitive)
+                  if filename.endswith('.7z') or filename.endswith('.exe') or filename.endswith('.zip'):
                       download_url = asset['browser_download_url']
                       
-                      # Extract version number (flexible pattern)
-                      version_match = re.search(r'(\d+\.\d+\.\d+(?:\.\d+)?)', filename)
+                      # Extract version number (flexible pattern - supports X.Y, X.Y.Z, X.Y.Z.W)
+                      version_match = re.search(r'(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)', filename)
                       if version_match:
                           ver = version_match.group(1)
                           assets.append({
@@ -145,7 +145,8 @@ jobs:
                   print(f"No .phar assets found in release")
                   print(f"Available assets: {[a['name'] for a in release_data.get('assets', [])]}")
               else:
-                  print(f"No .7z or .zip assets found starting with '{module_name}' in release")
+                  print(f"No .7z, .exe, or .zip assets found starting with '{module_name}' in release")
+                  print(f"Available assets: {[a['name'] for a in release_data.get('assets', [])]}")
               exit(0)
           
           # Read existing properties file
@@ -250,7 +251,7 @@ jobs:
             This PR updates the `${{ steps.module_info.outputs.module_name }}.properties` file with new versions from release `${{ github.event.release.tag_name || github.event.inputs.release_tag }}`.
             
             ### Changes:
-            - Extracted assets starting with `${{ steps.module_info.outputs.module_name }}`
+            - Extracted assets starting with `${{ steps.module_info.outputs.module_name }}` (.7z, .exe, or .zip files)
             - Added version entries with download URLs
             - Maintained semver ordering (newest first)
             
@@ -276,3 +277,11 @@ jobs:
           gh pr merge ${{ steps.create_pr.outputs.pull-request-number }} --auto --squash
         env:
           GH_TOKEN: ${{ secrets.GH_PAT }}
+      
+      - name: Cleanup
+        if: always()
+        run: |
+          if [ -f module_name.txt ]; then
+            rm module_name.txt
+            echo "Cleaned up module_name.txt"
+          fi
