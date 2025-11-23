@@ -106,8 +106,8 @@ jobs:
               if filename.endswith('.7z'):
                   download_url = asset['browser_download_url']
                   
-                  # Extract version number (flexible pattern)
-                  version_match = re.search(r'(\d+\.\d+\.\d+(?:\.\d+)?)', filename)
+                  # Extract version number (flexible pattern supporting 2+ components)
+                  version_match = re.search(r'(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)', filename)
                   if version_match:
                       ver = version_match.group(1)
                       assets.append({
