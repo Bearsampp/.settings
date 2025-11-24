@@ -164,6 +164,33 @@ jobs:
                       key, value = line.split('=', 1)
                       properties[key.strip()] = value.strip()
           
+          # Fix malformed version entries by re-extracting correct versions from URLs
+          # This handles cases like "2025.7.2.7" or "18.1-2025" that should be "18.1"
+          fixed_properties = OrderedDict()
+          for key, url in properties.items():
+              # Try to extract the correct version from the URL
+              # URL format: .../bearsampp-postgresql-18.1-2025.7.2.7z
+              url_version_match = re.search(
+                  rf'{module_name}-(\d+\.\d+(?:\.\d+)?(?:\.\d+)?(?:-(?:RC|beta|alpha|dev)\d*)?)(?=-\d{{4}}\.|-\d{{4}}\d{{2}}\.|\.\d+z|/|$)',
+                  url,
+                  re.IGNORECASE
+              )
+              
+              if url_version_match:
+                  correct_version = url_version_match.group(1)
+                  # If the key is malformed (date-like or has trailing year), fix it
+                  if re.match(r'^20\d{2}\.', key) or re.search(r'-20\d{2}$', key):
+                      print(f"Fixing malformed entry: {key} -> {correct_version}")
+                      fixed_properties[correct_version] = url
+                  else:
+                      # Keep valid entries as-is
+                      fixed_properties[key] = url
+              else:
+                  # If we can't extract version from URL, keep the original entry
+                  fixed_properties[key] = url
+          
+          properties = fixed_properties
+          
           # Add new versions
           for asset in assets:
               ver = asset['version']
