@@ -112,8 +112,9 @@ jobs:
               if filename.endswith('.7z'):
                   download_url = asset['browser_download_url']
                   
-                  # Extract version number (flexible pattern supporting 2+ components)
-                  version_match = re.search(r'(\d+\.\d+(?:\.\d+)?(?:\.\d+)?)', filename)
+                  # Extract version number after module name (e.g., "bearsampp-postgresql-18.1-..." -> "18.1")
+                  # Pattern looks for version after "postgresql-" or similar module name
+                  version_match = re.search(rf'{module_name}-(\d+\.\d+(?:\.\d+)?(?:\.\d+)?(?:-[A-Za-z0-9]+)?)', filename, re.IGNORECASE)
                   if version_match:
                       ver = version_match.group(1)
                       assets.append({
