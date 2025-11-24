@@ -79,6 +79,12 @@ jobs:
           module_name = os.environ['MODULE_NAME']
           github_token = os.environ['GITHUB_TOKEN']
           
+          # Strip module name prefix from tag if present (e.g., "postgresql-2025.11.22" -> "2025.11.22")
+          if release_tag.lower().startswith(f"{module_name.lower()}-"):
+              original_tag = release_tag
+              release_tag = release_tag[len(module_name)+1:]
+              print(f"Stripped module prefix from tag: {original_tag} -> {release_tag}")
+          
           print(f"Processing release: {release_tag}")
           print(f"Module name: {module_name}")
           
