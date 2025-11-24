@@ -238,6 +238,7 @@ You can manually trigger workflows from the GitHub Actions tab:
 **Special Module Handling:**
 - **composer**: Accepts `.phar` files, extracts version from filename or release name
 - **xlight**: Looks for `xlight-x64.zip`, always uses version from release name (e.g., "Xlight 3.9.4.6")
+- **mailpit**: Looks for `mailpit-windows-amd64.zip`, always uses version from release name (e.g., "Mailpit 1.18.7")
 - **git**: Files start with `portable` instead of `git` (e.g., `PortableGit-2.48.1-64-bit.7z.exe`)
 - **All others**: Standard processing with filename → release name fallback
 
