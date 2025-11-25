@@ -1,6 +1,4 @@
 group:
-  - deleteOrphaned: false
-
   # Bearsampp repo unique things
   - files:
       - source: .github/workflows/changelog.yml
