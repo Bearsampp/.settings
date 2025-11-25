@@ -52,7 +52,6 @@ group:
         dest: favicon.ico
     repos: |
         Bearsampp/dev
-        Bearsampp/login-servers-enhanced
         Bearsampp/aetraymenu
         Bearsampp/module-apache
         Bearsampp/module-bruno
