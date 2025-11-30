@@ -56,7 +56,6 @@ group:
         Bearsampp/module-apache
         Bearsampp/module-bruno
         Bearsampp/module-composer
-        Bearsampp/module-cmder
         Bearsampp/module-ghostscript
         Bearsampp/module-git
         Bearsampp/module-mailpit
@@ -72,6 +71,7 @@ group:
         Bearsampp/module-postgresql
         Bearsampp/module-python
         Bearsampp/module-ruby
+        Bearsampp/module-shell
         Bearsampp/module-xlight
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
@@ -108,7 +108,6 @@ group:
     repos: |
         Bearsampp/module-apache
         Bearsampp/module-bruno
-        Bearsampp/module-cmder
         Bearsampp/module-composer
         Bearsampp/module-ghostscript
         Bearsampp/module-git
@@ -125,6 +124,7 @@ group:
         Bearsampp/module-postgresql
         Bearsampp/module-python
         Bearsampp/module-ruby
+        Bearsampp/module-shell
         Bearsampp/module-xlight
 
   # Things for modules-untouched ONLY!
