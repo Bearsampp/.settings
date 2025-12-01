@@ -69,9 +69,9 @@ group:
         Bearsampp/module-phpmyadmin
         Bearsampp/module-phppgadmin
         Bearsampp/module-postgresql
+        Bearsampp/module-powershell
         Bearsampp/module-python
         Bearsampp/module-ruby
-        Bearsampp/module-shell
         Bearsampp/module-xlight
         Bearsampp/modules-untouched
         Bearsampp/prerequisites
@@ -122,9 +122,9 @@ group:
         Bearsampp/module-phpmyadmin
         Bearsampp/module-phppgadmin
         Bearsampp/module-postgresql
+        Bearsampp/module-powershell
         Bearsampp/module-python
         Bearsampp/module-ruby
-        Bearsampp/module-shell
         Bearsampp/module-xlight
 
   # Things for modules-untouched ONLY!
