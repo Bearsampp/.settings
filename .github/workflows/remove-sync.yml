@@ -8,8 +8,13 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout runner
+      - name: Checkout this repo
         uses: actions/checkout@v4
+
+      - name: Set up git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
 
       - name: Remove sync.yml from each repo
         env:
@@ -49,11 +54,14 @@ jobs:
             git clone "https://x-access-token:${GH_PAT}@github.com/Bearsampp/$repo.git"
             cd "$repo"
 
+            # Detect default branch
+            default_branch=$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')
+            git checkout "$default_branch"
+
             if [ -f ".github/workflows/sync.yml" ]; then
-              echo "Deleting sync.yml from $repo"
               git rm ".github/workflows/sync.yml"
               git commit -m "Remove sync.yml workflow"
-              git push origin main
+              git push origin "$default_branch"
             else
               echo "No sync.yml found in $repo"
             fi
