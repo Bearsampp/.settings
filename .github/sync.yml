@@ -1,8 +1,6 @@
 group:
   # Bearsampp repo unique things
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: .github/workflows/changelog.yml
         dest: .github/workflows/changelog.yml
       - source: .editorconfig
@@ -22,8 +20,6 @@ group:
 
   # Prerequisites unique things
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: img/artwork/Bearsampp-logo-128x128.ico
         dest:  setup/bearsampp.ico
       - source: img/artwork/bearsampp.bmp
@@ -38,8 +34,6 @@ group:
 
   # All COMMON items go here
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: .common
         dest: .github
       - source: .github/.phpstorm-metadata/winbinder.php
@@ -86,8 +80,6 @@ group:
 
   # All SANDBOX items go here
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: .common
         dest: .github
       - source: .github/.phpstorm-metadata/winbinder.php
@@ -107,8 +99,6 @@ group:
 
   # Things for modules ONLY!
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: .releases/update-releases-properties.yml
         dest: .github/workflows/update-releases-properties.yml
       - source: .releases/validate-properties-links.yml
@@ -137,8 +127,6 @@ group:
 
   # Things for modules-untouched ONLY!
   - files:
-      - source: .github/workflows/sync.yml
-        dest: .github/workflows/sync.yml
       - source: .releases/update-module-properties.yml
         dest: .github/workflows/update-module-properties.yml
       - source: .releases/validate-properties-links.yml
