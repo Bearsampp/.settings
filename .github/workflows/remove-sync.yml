@@ -1,0 +1,63 @@
+name: Remove sync.yml from all repos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  remove-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout runner
+        uses: actions/checkout@v4
+
+      - name: Remove sync.yml from each repo
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          repos=(
+            "dev"
+            "aetraymenu"
+            "module-apache"
+            "module-bruno"
+            "module-composer"
+            "module-ghostscript"
+            "module-git"
+            "module-mailpit"
+            "module-mariadb"
+            "module-memcached"
+            "module-mysql"
+            "module-ngrok"
+            "module-nodejs"
+            "module-perl"
+            "module-php"
+            "module-phpmyadmin"
+            "module-phppgadmin"
+            "module-postgresql"
+            "module-powershell"
+            "module-python"
+            "module-ruby"
+            "module-xlight"
+            "modules-untouched"
+            "prerequisites"
+            ".teams"
+          )
+
+          for repo in "${repos[@]}"; do
+            echo "Processing Bearsampp/$repo"
+
+            git clone "https://x-access-token:${GH_PAT}@github.com/Bearsampp/$repo.git"
+            cd "$repo"
+
+            if [ -f ".github/workflows/sync.yml" ]; then
+              echo "Deleting sync.yml from $repo"
+              git rm ".github/workflows/sync.yml"
+              git commit -m "Remove sync.yml workflow"
+              git push origin main
+            else
+              echo "No sync.yml found in $repo"
+            fi
+
+            cd ..
+            rm -rf "$repo"
+          done
