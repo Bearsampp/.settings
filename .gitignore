@@ -21,6 +21,7 @@
 
 # Qodo
 /.qodo
+/.junie/
 
 # Gradle
 .gradle/
