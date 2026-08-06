@@ -210,6 +210,12 @@ version.number = https://download.url/file.7z
 
 Workflows automatically run when a release is published in the repository.
 
+**`update-module-properties` triggers on:**
+
+- `release` events: `published` (new release), `prereleased`, `released` (pre-release → full release / "latest"), `edited`, `deleted`
+- `schedule` (every 6 hours): fallback that catches any release whose `release` event was **not delivered** by GitHub (e.g. releases that were saved as drafts before being published). It re-scans the **last 30 days** of releases, re-adds any **missing** version entries, and refreshes **changed URLs** (newest release wins if a version appears in more than one).
+- `workflow_dispatch` (manual)
+
 ### Manual Trigger
 
 You can manually trigger workflows from the GitHub Actions tab:
@@ -231,9 +237,12 @@ You can manually trigger workflows from the GitHub Actions tab:
 1. **Extracts module name** from release tag (e.g., `php-2025.10.31` → `php`)
 2. **Finds matching files** that start with module name and end with `.7z`, `.exe`, or `.zip`
 3. **Parses version numbers** from filenames (or release name as fallback)
-4. **Updates** `modules/{module}.properties` file
-5. **Sorts** entries by semantic version (newest first)
-6. **Creates PR** with auto-merge enabled
+4. **Filters assets** to the module's own file type (e.g. a `php-*` release only contributes the PHP binaries, not bundled extensions like `php_memcache-*` or `ImageMagick-*`)
+5. **Updates** `modules/{module}.properties` file
+6. **Sorts** entries by semantic version (newest first)
+7. **Creates PR** with auto-merge enabled
+
+Runs on all `release` activity types (`published`, `prereleased`, `released`, `edited`, `deleted`). Because GitHub sometimes fails to deliver the `release` event for releases that were saved as drafts first, a **scheduled fallback (every 6 hours)** re-scans the **last 30 days** of releases, re-adding missing version entries and refreshing changed URLs (newest release wins) — a missed event still results in an automatic update (usually within 6 hours), and manually removed versions are restored.
 
 **Special Module Handling:**
 - **composer**: Accepts `.phar` files, extracts version from filename or release name
@@ -309,12 +318,9 @@ When version extraction fails, the workflow provides detailed debug information 
 
 **Issue:** Workflow doesn't trigger when changing a pre-release to a full release
 
-**Solution:** The workflow now triggers on three events:
-- `published` - When a new release is published
-- `released` - When a pre-release is converted to a full release
-- `edited` - When a release is edited
+**Solution:** The workflow now triggers on the `released` activity type (fires when a pre-release is converted to a full release / marked "latest") as well as `published`, `prereleased`, `edited`, and `deleted`.
 
-If the workflow still doesn't trigger, manually run it from the Actions tab.
+Additionally, GitHub sometimes drops the `release` event entirely for releases that were saved as **drafts** before being published. If that happens, the workflow's **scheduled fallback** (every 6 hours) will pick up the release automatically. If you need the update immediately, run it manually from the Actions tab.
 
 ### Link Validation Failing
 
