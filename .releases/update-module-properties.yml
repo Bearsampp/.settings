@@ -3,13 +3,7 @@ name: Update Module Properties
 on:
     release:
         # 'released' covers pre-release -> full release ("latest") conversions.
-        # Note: GitHub sometimes drops the release event for releases that were
-        # saved as drafts first, so a schedule fallback is included below.
         types: [published, prereleased, released, edited, deleted]
-
-    schedule:
-        # Fallback: catches releases whose 'release' event was not delivered.
-        - cron: '0 */6 * * *'
 
     workflow_dispatch:
         inputs:
@@ -236,13 +230,11 @@ jobs:
 
                   # ------------------------------------------------------------
                   # Process a single release
-                  # Returns (module_name, changed, failed)
-                  # seen_keys: shared across releases in a scheduled run so an
-                  # older release (processed later) never overwrites a URL that
-                  # was already set by a newer release. Missing versions are
-                  # added; existing versions get their URL updated if changed.
+                  # Returns (module_name, changed, failed).
+                  # Missing versions are added; existing versions get their URL
+                  # updated if the release now points to a different asset.
                   # ------------------------------------------------------------
-                  def process_release(release, seen_keys=None):
+                  def process_release(release):
                       tag = release.get('tag_name', '')
                       module_name = module_name_from_tag(tag)
                       if not module_name:
@@ -284,17 +276,11 @@ jobs:
 
                       properties, header_lines = parse_properties(properties_file)
 
-                      if seen_keys is None:
-                          seen_keys = set()
-
                       # Update properties map
                       changes_made = False
                       for a in assets:
                           ver = a["version"]
                           url = a["url"]
-                          if ver in seen_keys:
-                              continue
-                          seen_keys.add(ver)
                           if ver in properties:
                               if properties[ver] != url:
                                   properties[ver] = url
@@ -346,75 +332,6 @@ jobs:
                       exit(0)
 
                   # ------------------------------------------------------------
-                  # Scheduled fallback (every 6h): catches releases whose
-                  # 'release' event was not delivered by GitHub (e.g. releases
-                  # that were saved as drafts before being published)
-                  # ------------------------------------------------------------
-                  if event_name == 'schedule':
-                      print("Scheduled run: checking recent releases...")
-                      all_releases = []
-                      page = 1
-                      while True:
-                          resp = requests.get(
-                              f"https://api.github.com/repos/{repo_owner}/{repo_name}/releases",
-                              params={'per_page': 100, 'page': page},
-                              headers=headers
-                          )
-                          resp.raise_for_status()
-                          batch = resp.json()
-                          if not batch:
-                              break
-                          all_releases.extend(batch)
-                          if len(batch) < 100:
-                              break
-                          page += 1
-                          if page > 3:
-                              break
-
-                      # Re-add missing version entries and refresh changed URLs
-                      # for recent releases. Releases are scanned newest-first;
-                      # a shared seen_keys set ensures an older release never
-                      # overwrites a URL already set by a newer release. Old
-                      # releases are assumed intentionally pruned, so only the
-                      # last N days are scanned.
-                      from datetime import datetime, timedelta, timezone
-
-                      recent_days = 30
-                      cutoff = datetime.now(timezone.utc) - timedelta(days=recent_days)
-
-                      seen_keys = set()
-                      processed_modules = []
-                      changed_any = False
-                      for release in all_releases:
-                          if release.get('draft'):
-                              print(f"SKIP draft release: {release.get('tag_name')}")
-                              continue
-                          published = release.get('published_at')
-                          if published:
-                              dt = datetime.fromisoformat(published.replace('Z', '+00:00'))
-                              if dt < cutoff:
-                                  print(f"INFO: Stopping at release older than {recent_days} days: {release.get('tag_name')}")
-                                  break
-                          module, changed, failed = process_release(release, seen_keys)
-                          if failed:
-                              module_name = module_name_from_tag(release.get('tag_name', ''))
-                              print(f"SKIP no properties file for module '{module_name}'")
-                              continue
-                          if changed and module and module not in processed_modules:
-                              processed_modules.append(module)
-                          if changed:
-                              changed_any = True
-
-                      if processed_modules:
-                          with open('module_name.txt', 'w', encoding='utf-8') as f:
-                              f.write('-'.join(processed_modules))
-
-                      if not changed_any:
-                          print("INFO: No releases required property updates")
-
-                      exit(0)
-
-                  # ------------------------------------------------------------
                   # Single release mode (release event / workflow_dispatch)
                   # ------------------------------------------------------------
                   module_name = module_name_from_tag(release_tag)
@@ -447,17 +364,6 @@ jobs:
                     echo "module_name=unknown" >> $GITHUB_OUTPUT
                   fi
 
-            - name: Compute PR label
-              id: pr_label
-              env:
-                  RELEASE_TAG: ${{ github.event.release.tag_name || github.event.inputs.release_tag || '' }}
-              run: |
-                  if [ -n "${RELEASE_TAG}" ]; then
-                      echo "label=${RELEASE_TAG}" >> $GITHUB_OUTPUT
-                  else
-                      echo "label=scheduled" >> $GITHUB_OUTPUT
-                  fi
-
             - name: Create Pull Request
               id: create_pr
               uses: peter-evans/create-pull-request@v8
@@ -466,14 +372,14 @@ jobs:
               with:
                   token: ${{ secrets.GH_PAT }}
                   base: main
-                  branch: update-${{ steps.module_info.outputs.module_name }}-${{ steps.pr_label.outputs.label }}
+                  branch: update-${{ steps.module_info.outputs.module_name }}-${{ github.event.release.tag_name || github.event.inputs.release_tag }}
                   delete-branch: true
                   title: 'Update ${{ steps.module_info.outputs.module_name }} properties'
                   body: |
                       Automated update of `${{ steps.module_info.outputs.module_name }}.properties`.
                       
-                      Action: ${{ github.event.action || github.event_name }}
-                      Release: ${{ github.event.release.tag_name || github.event.inputs.release_tag || github.event_name }}
+                      Action: ${{ github.event.action || 'workflow_dispatch' }}
+                      Release: ${{ github.event.release.tag_name || github.event.inputs.release_tag }}
                       
                       ${{ github.event.action == 'deleted' && 'Note: The associated Git tag will be deleted if this PR is merged (or immediately if tag deletion is enabled).' || '' }}
 

@@ -213,7 +213,6 @@ Workflows automatically run when a release is published in the repository.
 **`update-module-properties` triggers on:**
 
 - `release` events: `published` (new release), `prereleased`, `released` (pre-release → full release / "latest"), `edited`, `deleted`
-- `schedule` (every 6 hours): fallback that catches any release whose `release` event was **not delivered** by GitHub (e.g. releases that were saved as drafts before being published). It re-scans the **last 30 days** of releases, re-adds any **missing** version entries, and refreshes **changed URLs** (newest release wins if a version appears in more than one).
 - `workflow_dispatch` (manual)
 
 ### Manual Trigger
@@ -242,7 +241,7 @@ You can manually trigger workflows from the GitHub Actions tab:
 6. **Sorts** entries by semantic version (newest first)
 7. **Creates PR** with auto-merge enabled
 
-Runs on all `release` activity types (`published`, `prereleased`, `released`, `edited`, `deleted`). Because GitHub sometimes fails to deliver the `release` event for releases that were saved as drafts first, a **scheduled fallback (every 6 hours)** re-scans the **last 30 days** of releases, re-adding missing version entries and refreshing changed URLs (newest release wins) — a missed event still results in an automatic update (usually within 6 hours), and manually removed versions are restored.
+Runs on all `release` activity types (`published`, `prereleased`, `released`, `edited`, `deleted`) whenever a new version is released or an existing release is altered in the modules-untouched repository. Each event re-adds missing version entries and refreshes URLs that have changed for the affected module's properties file.
 
 **Special Module Handling:**
 - **composer**: Accepts `.phar` files, extracts version from filename or release name
@@ -320,7 +319,7 @@ When version extraction fails, the workflow provides detailed debug information 
 
 **Solution:** The workflow now triggers on the `released` activity type (fires when a pre-release is converted to a full release / marked "latest") as well as `published`, `prereleased`, `edited`, and `deleted`.
 
-Additionally, GitHub sometimes drops the `release` event entirely for releases that were saved as **drafts** before being published. If that happens, the workflow's **scheduled fallback** (every 6 hours) will pick up the release automatically. If you need the update immediately, run it manually from the Actions tab.
+If GitHub does not deliver the `release` event for a release that was saved as a **draft** before being published, run the workflow manually from the Actions tab (it accepts the release tag as input).
 
 ### Link Validation Failing
 
