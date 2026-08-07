@@ -101,8 +101,6 @@ group:
   - files:
       - source: .releases/update-releases-properties.yml
         dest: .github/workflows/update-releases-properties.yml
-      - source: .releases/validate-properties-links.yml
-        dest: .github/workflows/validate-properties-links.yml
     repos: |
         Bearsampp/module-apache
         Bearsampp/module-bruno
@@ -129,7 +127,5 @@ group:
   - files:
       - source: .releases/update-module-properties.yml
         dest: .github/workflows/update-module-properties.yml
-      - source: .releases/validate-properties-links.yml
-        dest: .github/workflows/validate-properties-links.yml
     repos: |
         Bearsampp/modules-untouched

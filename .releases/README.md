@@ -4,11 +4,10 @@ This automation system automatically updates `.properties` files when releases a
 
 ## Overview
 
-The system consists of three workflows:
+The system consists of two workflows:
 
 1. **`update-module-properties.yml`** - For `modules-untouched` repository
 2. **`update-releases-properties.yml`** - For individual module repositories (e.g., `module-php`)
-3. **`validate-properties-links.yml`** - Validates URLs in both types of repositories
 
 ## Two Different Use Cases
 
@@ -70,7 +69,6 @@ The system consists of three workflows:
    ```bash
    # Copy to modules-untouched/.github/workflows/
    cp .releases/update-module-properties.yml /path/to/modules-untouched/.github/workflows/
-   cp .releases/validate-properties-links.yml /path/to/modules-untouched/.github/workflows/
    ```
 
 ### For Individual Module Repositories
@@ -87,7 +85,6 @@ The system consists of three workflows:
    ```bash
    # Copy to module-php/.github/workflows/ (or other module repo)
    cp .releases/update-releases-properties.yml /path/to/module-php/.github/workflows/
-   cp .releases/validate-properties-links.yml /path/to/module-php/.github/workflows/
    ```
 
 ## How It Works
@@ -110,23 +107,7 @@ The system consists of three workflows:
 │ • Parses version numbers    │
 │ • Updates modules/php.props │
 │ • Sorts by semver           │
-│ • Creates PR                │
-└──────────┬──────────────────┘
-           │
-           │ 2. PR Created
-           ▼
-┌───────────────────────���─────┐
-│ validate-properties-links   │
-│                             │
-│ • Validates all URLs        │
-│ • Comments on PR            │
-│ • Blocks if invalid         │
-└──────────┬──────────────────┘
-           │
-           │ 3. Validation Passes
-           ▼
-┌─────────────────────────────┐
-│      Auto-Merge PR          │
+│ • Creates PR (auto-merge)   │
 └─────────────────────────────┘
 ```
 
@@ -146,24 +127,8 @@ The system consists of three workflows:
 │ • Finds all .7z/.zip files  │
 │ • Parses version numbers    │
 │ • Updates releases.props    │
-│ • Sorts by semver           │
-│ • Creates PR                │
-└──────────┬──���───────────────┘
-           │
-           │ 2. PR Created
-           ▼
-┌─────────────────────────────┐
-│ validate-properties-links   │
-│                             │
-│ • Validates all URLs        │
-│ • Comments on PR            │
-│ • Blocks if invalid         │
-└──────────┬──────────────────┘
-           │
-           │ 3. Validation Passes
-           ▼
-┌─────────────────────────────┐
-│      Auto-Merge PR          │
+│ • Validates URLs            │
+│ • Creates PR (auto-merge)   │
 └─────────────────────────────┘
 ```
 
@@ -259,14 +224,6 @@ Runs on all `release` activity types (`published`, `prereleased`, `released`, `e
 5. **Sorts** entries by semantic version (newest first)
 6. **Creates PR** with auto-merge enabled
 
-### validate-properties-links.yml (both)
-
-1. **Detects changed** `.properties` files in PR
-2. **Validates all URLs** by sending HTTP requests
-3. **Reports results** in PR comments
-4. **Blocks merge** if any URLs are invalid
-5. **Re-runs** when PR is edited
-
 ## Troubleshooting
 
 ### Release Tag Format Issues (modules-untouched)
@@ -331,15 +288,15 @@ If GitHub does not deliver the `release` event for a release that was saved as a
 **Solutions:**
 1. Check the workflow logs for specific errors
 2. Manually verify URLs in a browser
-3. Re-run validation by editing the PR (add a space to description)
-4. Fix invalid URLs by editing the properties file in the PR
+3. Re-run the update workflow from the Actions tab after fixing the issues
+4. Fix invalid URLs by editing the properties file before re-running
 
 ### Auto-Merge Not Working
 
 **Checklist:**
 1. ✅ "Allow auto-merge" enabled in repository settings
 2. ✅ `GH_PAT` secret has sufficient permissions
-3. ✅ Link validation workflow passed
+3. ✅ Update workflow passed (URLs validated inline before merge)
 4. ✅ No branch protection rules blocking merge
 
 ## Security Considerations
