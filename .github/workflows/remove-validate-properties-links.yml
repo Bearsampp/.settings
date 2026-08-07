@@ -1,0 +1,69 @@
+name: Remove validate-properties-links.yml from all repos
+
+on:
+  workflow_dispatch:
+
+jobs:
+  remove-validate:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+    steps:
+      - name: Checkout this repo
+        uses: actions/checkout@v6
+
+      - name: Set up git identity
+        run: |
+          git config --global user.name "github-actions[bot]"
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Remove validate-properties-links.yml from each repo
+        env:
+          GH_PAT: ${{ secrets.GH_PAT }}
+        run: |
+          repos=(
+            "module-apache"
+            "module-bruno"
+            "module-composer"
+            "module-ghostscript"
+            "module-git"
+            "module-mailpit"
+            "module-mariadb"
+            "module-memcached"
+            "module-mysql"
+            "module-ngrok"
+            "module-nodejs"
+            "module-perl"
+            "module-php"
+            "module-phpmyadmin"
+            "module-phppgadmin"
+            "module-postgresql"
+            "module-powershell"
+            "module-python"
+            "module-ruby"
+            "module-xlight"
+            "modules-untouched"
+          )
+
+          for repo in "${repos[@]}"; do
+            echo "Processing Bearsampp/$repo"
+
+            git clone "https://x-access-token:${GH_PAT}@github.com/Bearsampp/$repo.git"
+            cd "$repo"
+
+            # Detect default branch
+            default_branch=$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')
+            git checkout "$default_branch"
+
+            if [ -f ".github/workflows/validate-properties-links.yml" ]; then
+              git rm ".github/workflows/validate-properties-links.yml"
+              git commit -m "Remove validate-properties-links.yml workflow"
+              git push origin "$default_branch"
+            else
+              echo "No validate-properties-links.yml found in $repo"
+            fi
+
+            cd ..
+            rm -rf "$repo"
+          done
