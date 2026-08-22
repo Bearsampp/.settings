@@ -55,9 +55,15 @@ jobs:
 
       - name: auto approve pr
         if: ${{ steps.auto-merge.conclusion == 'success' }}
+        env:
+          GH_TOKEN: ${{ secrets.BEARSAMPP_BOT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.BEARSAMPP_BOT_PAT }}
         run: |
           gh pr review --approve "$PR_URL"
-          gh pr merge --auto --rebase "$PR_URL"
+          gh pr merge --rebase "$PR_URL" \
+            || gh pr merge --squash "$PR_URL" \
+            || gh pr merge --merge "$PR_URL" \
+            || echo "Merge skipped (PR already merged or not mergeable)."
 
   auto-merge-releases-update:
     timeout-minutes: 5
@@ -72,5 +78,12 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     steps:
-      - name: enable auto merge for releases update PR
-        run: gh pr merge --auto --squash "$PR_URL"
+      - name: merge releases update pr
+        env:
+          GH_TOKEN: ${{ secrets.BEARSAMPP_BOT_PAT }}
+          GITHUB_TOKEN: ${{ secrets.BEARSAMPP_BOT_PAT }}
+        run: |
+          gh pr merge --squash "$PR_URL" \
+            || gh pr merge --merge "$PR_URL" \
+            || gh pr merge --rebase "$PR_URL" \
+            || echo "Merge skipped (PR already merged or not mergeable)."
