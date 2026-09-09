@@ -15,6 +15,8 @@ group:
         dest: img/Bearsampp-logo.svg
       - source: LICENSE
         dest: LICENSE
+      - source: snyk.yml
+        dest: sync.yml
     repos: |
         Bearsampp/Bearsampp
 
@@ -94,6 +96,8 @@ group:
         dest: .gitattributes
       - source: img/artwork/favicon.ico
         dest: favicon.ico
+      - source: snyk.yml
+        dest: sync.yml
     repos: |
         Bearsampp/sandbox
 
