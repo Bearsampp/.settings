@@ -3,3 +3,5 @@ exclude:
   code:
     - "/core/libs**"
     - "/core/tmp**"
+    - "/Core/libs**"
+    - "/Core/tmp**"
