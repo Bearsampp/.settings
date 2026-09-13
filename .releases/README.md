@@ -21,6 +21,7 @@ The system consists of two workflows:
 
 **Version Extraction:** 
 - First tries to extract version from filename (supports 2+ part versions: `X.Y`, `X.Y.Z`, `X.Y.Z.W`, etc.)
+- Prerelease suffixes are kept as part of the version (`php-8.6.0beta3-...zip` → `8.6.0beta3`, `php-8.0.0RC5-...zip` → `8.0.0RC5`)
 - Falls back to release name if version not found in filename
 - Special handling for `composer` (.phar files) and `xlight` (version from release name only)
 
@@ -257,6 +258,7 @@ Runs on all `release` activity types (`published`, `prereleased`, `released`, `e
    - ✅ 3-part: `php-8.3.14-...zip` → `8.3.14`
    - ✅ 4-part: `xlight-3.9.4.6.zip` → `3.9.4.6`
    - ✅ 5+ parts: Any number of dot-separated numbers
+   - ✅ Prerelease: `php-8.6.0beta3-...zip` → `8.6.0beta3`, `php-8.0.0RC5-...zip` → `8.0.0RC5`
    - ❌ Wrong: `php-latest.zip`, `apache.zip` (no version)
 
 2. **From release name** (fallback) - If filename doesn't contain version:
