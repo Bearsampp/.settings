@@ -223,7 +223,14 @@ Runs on all `release` activity types (`published`, `prereleased`, `released`, `e
 3. **Parses version numbers** from filenames
 4. **Updates** `releases.properties` file
 5. **Sorts** entries by semantic version (newest first)
-6. **Creates PR** with auto-merge enabled
+6. **Pushes** the commit directly (auto-merge not required) and dispatches `module_release_created` to Bearsampp's quickpick dispatcher on every non-PR trigger (including deletion, so a purged version is recombined out).
+
+**Event behavior:**
+- **Pre-release created/published** (`prereleased` or `published` while still a pre-release): **quickpick dispatcher ONLY** — no `releases.properties` changes, no test re-runs.
+- **Release edited (files changed)** (`edited`): **full action** — rechecks the file URL for the release's versions and updates the stored version/url pair whenever the URL changed, purges any entry whose file was removed from the release (e.g. all `.7z` assets deleted), on the PR branch (and mirrored to `main`), then dispatch to quickpick.
+- **Release promoted to a full release** (`released`): **full action** — update `releases.properties` on the PR branch (and mirror to `main`), then dispatch to quickpick.
+- **Release deleted** (`deleted`): **full action** that **purges** the release's version/url entries from `releases.properties` (matched on the release tag embedded in each stored URL; covers both the release being removed entirely and its files being removed) to avoid confusion, then dispatch to quickpick so the combined release is recreated without the removed version.
+- **Manual run** (`workflow_dispatch` with `release_tag` + `branch`): **full action**.
 
 ## Troubleshooting
 
@@ -276,7 +283,7 @@ When version extraction fails, the workflow provides detailed debug information 
 
 **Issue:** Workflow doesn't trigger when changing a pre-release to a full release
 
-**Solution:** The workflow now triggers on the `released` activity type (fires when a pre-release is converted to a full release / marked "latest") as well as `published`, `prereleased`, `edited`, and `deleted`.
+**Solution:** The workflow now triggers on the `released` activity type (fires when a pre-release is converted to a full release / marked "latest") as well as `published`, `prereleased`, `edited`, and `deleted`. The `update-releases-properties.yml` module-repo workflow listens on `published`, `prereleased`, `released`, `edited`, and `deleted`: a pre-release creation only fires the quickpick dispatcher, an edit (files changed) or pre-release → full release conversion runs the full action (re-checking the stored URL/version), and a deletion purges the release's entries from `releases.properties`.
 
 If GitHub does not deliver the `release` event for a release that was saved as a **draft** before being published, run the workflow manually from the Actions tab (it accepts the release tag as input).
 
