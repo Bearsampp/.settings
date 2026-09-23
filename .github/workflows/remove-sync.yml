@@ -5,7 +5,7 @@ on:
 
 jobs:
   remove-sync:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-26.04
     env:
       FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
