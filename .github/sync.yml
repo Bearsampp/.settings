@@ -105,8 +105,8 @@ group:
   - files:
       - source: .releases/update-releases-properties.yml
         dest: .github/workflows/update-releases-properties.yml
-      - source: .releases/gh-dl-daily-with-chart.yml
-        dest: .github/workflows/gh-dl-daily-with-chart.yml
+      - source: .releases/stats-daily-with-chart.yml
+        dest: .github/workflows/stats-daily-with-chart.yml
     repos: |
         Bearsampp/module-apache
         Bearsampp/module-bruno
