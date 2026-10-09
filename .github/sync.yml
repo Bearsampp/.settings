@@ -144,3 +144,4 @@ group:
         dest: .github/workflows/stats-daily-with-chart.yml
     repos: |
         Bearsampp/mod_bearsampp_stats
+        Bearsampp/mod_bearsamppai
