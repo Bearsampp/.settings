@@ -137,3 +137,10 @@ group:
         dest: .github/workflows/update-module-properties.yml
     repos: |
         Bearsampp/modules-untouched
+
+    # Stats repo unique things
+  - files:
+      - source: .releases/stats-daily-with-chart.yml
+        dest: .github/workflows/stats-daily-with-chart.yml
+    repos: |
+        Bearsampp/mod_bearsampp_stats
