@@ -17,8 +17,6 @@ group:
         dest: LICENSE
       - source: .snyk.yml
         dest: .snyk.yml
-      - source: .releases/stats-daily-with-chart.yml
-        dest: .github/workflows/stats-daily-with-chart.yml
     repos: |
         Bearsampp/Bearsampp
 
@@ -145,3 +143,4 @@ group:
     repos: |
         Bearsampp/mod_bearsampp_stats
         Bearsampp/mod_bearsamppai
+        Bearsampp/Bearsampp
