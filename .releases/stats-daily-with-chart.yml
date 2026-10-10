@@ -28,7 +28,7 @@ jobs:
       month: ${{ steps.publish.outputs.month }}
 
     steps:
-      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd
+      - uses: actions/checkout@v7
 
       # main is protected (requires an approving review), so the snapshot is
       # written to an unprotected staging branch and promoted by a PR below.
@@ -293,7 +293,7 @@ jobs:
           author: Bearsampp <support@bearsampp.com>
           branch: update-stats
           base: main
-          title: 'Update downloads tracking snapshot'
+          title: 'Update downloads tracking snapshot [skip ci]'
           body: |
             Automated update of the release download snapshot and charts.
 
