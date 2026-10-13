@@ -1,8 +1,6 @@
 group:
   # Bearsampp repo unique things
   - files:
-      - source: .github/workflows/changelog.yml
-        dest: .github/workflows/changelog.yml
       - source: .editorconfig
         dest: .editorconfig
       - source: .gitattributes
@@ -75,7 +73,6 @@ group:
         Bearsampp/module-python
         Bearsampp/module-ruby
         Bearsampp/module-xlight
-        Bearsampp/modules-untouched
         Bearsampp/prerequisites
         Bearsampp/.teams
 
@@ -131,10 +128,29 @@ group:
 
   # Things for modules-untouched ONLY!
   - files:
+      - source: .common
+        dest: .github
+        exclude: |
+          workflows/changelog.yml
+          release.yml
+      - source: .github/.phpstorm-metadata/winbinder.php
+        dest: .github/.phpstorm-metadata/winbinder.php
+      - source: img/artwork/Bearsampp-with-text-stroked.svg
+        dest: img/Bearsampp-logo.svg
+      - source: LICENSE
+        dest: LICENSE
+      - source: .gitignore.common
+        dest: .gitignore
+      - source: .editorconfig
+        dest: .editorconfig
+      - source: .gitattributes
+        dest: .gitattributes
+      - source: img/artwork/favicon.ico
+        dest: favicon.ico
       - source: .releases/update-module-properties.yml
         dest: .github/workflows/update-module-properties.yml
     repos: |
-        Bearsampp/modules-untouched
+      Bearsampp/modules-untouched
 
     # Stats repo unique things
   - files:
