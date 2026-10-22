@@ -1,4 +1,8 @@
 name: Sync Files
+
+concurrency:
+  group: settings-sync
+  cancel-in-progress: false
 on:
   push:
     branches:
